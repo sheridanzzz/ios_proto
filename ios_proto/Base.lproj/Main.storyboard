@@ -188,18 +188,35 @@
         <!--Card Swipe Screen-->
         <scene sceneID="xQI-5w-189">
             <objects>
-                <viewController id="vTa-aC-eKz" sceneMemberID="viewController">
+                <viewController id="vTa-aC-eKz" customClass="KolodaViewController" customModule="ios_proto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="isw-bP-NHH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Au8-XF-AK3" userLabel="KolodaView" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="100" y="244" width="175" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="IHb-Lt-9uJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="UkM-1b-24f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UkM-1b-24f" firstAttribute="trailing" secondItem="Au8-XF-AK3" secondAttribute="trailing" constant="100" id="MyP-zx-RND"/>
+                            <constraint firstItem="Au8-XF-AK3" firstAttribute="top" secondItem="UkM-1b-24f" secondAttribute="top" constant="200" id="e2G-e2-Jau"/>
+                            <constraint firstItem="Au8-XF-AK3" firstAttribute="leading" secondItem="UkM-1b-24f" secondAttribute="leading" constant="100" id="kmS-0r-CrX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Card Swipe Screen" id="LGV-2B-YZn"/>
+                    <connections>
+                        <outlet property="myContentsKolodaView" destination="Au8-XF-AK3" id="pn9-T4-aL5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUQ-40-Nvm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2727" y="-441"/>
+            <point key="canvasLocation" x="-2732" y="-451.12443778110946"/>
         </scene>
         <!--Home-->
         <scene sceneID="TVP-S5-1zK">
