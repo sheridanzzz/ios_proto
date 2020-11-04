@@ -5,8 +5,8 @@
 //  Created by Sheridan's Lair on 05/11/20.
 //
 
-import UIKit
 import Koloda
+import UIKit
 
 class KolodaViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSource {
     
