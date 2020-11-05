@@ -16,6 +16,10 @@
 		50C25A21253AF8AE00A03316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C25A20253AF8AE00A03316 /* Assets.xcassets */; };
 		50C25A24253AF8AE00A03316 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C25A22253AF8AE00A03316 /* LaunchScreen.storyboard */; };
 		50E6ADCA2553D0CE00DD6C5D /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6ADC92553D0CE00DD6C5D /* LocationAnnotation.swift */; };
+		50E6ADD22553D5AC00DD6C5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6ADD12553D5AC00DD6C5D /* LoginViewController.swift */; };
+		50E6ADD52553D78300DD6C5D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6ADD42553D78300DD6C5D /* RegisterViewController.swift */; };
+		50E6ADD82553D7E000DD6C5D /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6ADD72553D7E000DD6C5D /* ForgotPasswordViewController.swift */; };
+		50E6ADDB2553D81100DD6C5D /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6ADDA2553D81100DD6C5D /* FacebookViewController.swift */; };
 		B8D702D5EFF010C9F6A45ABC /* Pods_ios_proto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEEEC5F25CFBFAAD91C8806 /* Pods_ios_proto.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +35,10 @@
 		50C25A23253AF8AE00A03316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50C25A25253AF8AE00A03316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50E6ADC92553D0CE00DD6C5D /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
+		50E6ADD12553D5AC00DD6C5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		50E6ADD42553D78300DD6C5D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		50E6ADD72553D7E000DD6C5D /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		50E6ADDA2553D81100DD6C5D /* FacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
 		6FAA10B2BCD93AAC79138247 /* Pods-ios_proto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_proto.release.xcconfig"; path = "Target Support Files/Pods-ios_proto/Pods-ios_proto.release.xcconfig"; sourceTree = "<group>"; };
 		BDA495F24ED61C3C2B462B7E /* Pods-ios_proto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_proto.debug.xcconfig"; path = "Target Support Files/Pods-ios_proto/Pods-ios_proto.debug.xcconfig"; sourceTree = "<group>"; };
 		FFEEEC5F25CFBFAAD91C8806 /* Pods_ios_proto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_proto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +87,10 @@
 				50281E242551C00D006BE114 /* MapViewController.swift */,
 				5094B0662553395E003849BC /* KolodaViewController.swift */,
 				50E6ADC92553D0CE00DD6C5D /* LocationAnnotation.swift */,
+				50E6ADD12553D5AC00DD6C5D /* LoginViewController.swift */,
+				50E6ADD42553D78300DD6C5D /* RegisterViewController.swift */,
+				50E6ADD72553D7E000DD6C5D /* ForgotPasswordViewController.swift */,
+				50E6ADDA2553D81100DD6C5D /* FacebookViewController.swift */,
 			);
 			path = ios_proto;
 			sourceTree = "<group>";
@@ -214,9 +226,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E6ADD22553D5AC00DD6C5D /* LoginViewController.swift in Sources */,
 				50C25A1C253AF8AB00A03316 /* ViewController.swift in Sources */,
+				50E6ADDB2553D81100DD6C5D /* FacebookViewController.swift in Sources */,
 				50C25A18253AF8AB00A03316 /* AppDelegate.swift in Sources */,
+				50E6ADD52553D78300DD6C5D /* RegisterViewController.swift in Sources */,
 				5094B0672553395E003849BC /* KolodaViewController.swift in Sources */,
+				50E6ADD82553D7E000DD6C5D /* ForgotPasswordViewController.swift in Sources */,
 				50C25A1A253AF8AB00A03316 /* SceneDelegate.swift in Sources */,
 				50281E252551C00D006BE114 /* MapViewController.swift in Sources */,
 				50E6ADCA2553D0CE00DD6C5D /* LocationAnnotation.swift in Sources */,
