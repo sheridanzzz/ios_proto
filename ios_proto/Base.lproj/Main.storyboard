@@ -363,7 +363,7 @@
         <!--Home-->
         <scene sceneID="TVP-S5-1zK">
             <objects>
-                <viewController id="JDW-9M-gjK" sceneMemberID="viewController">
+                <viewController id="JDW-9M-gjK" customClass="MapViewController" customModule="ios_proto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2cy-Z3-3zs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -382,6 +382,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="xdl-3M-CtK"/>
+                    <connections>
+                        <outlet property="mapView" destination="jEN-ZO-EWh" id="peA-x3-bBQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nho-Cy-56Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
