@@ -24,7 +24,9 @@ class KolodaViewController: UIViewController, KolodaViewDelegate, KolodaViewData
     
     // fetch added images and appended to imageStock
     func fetchImages() {
-        guard let basketball = UIImage(named: "basketball.png"), let football = UIImage(named: "football.png"), let rugby = UIImage(named: "rugby.png") else { return } // fetch images
+        guard let swipeRight = UIImage(named: "swipe_right.jpg"), let swipeLeft = UIImage(named: "swipe_left.png"), let basketball = UIImage(named: "basketball.png"), let football = UIImage(named: "football.png"), let rugby = UIImage(named: "rugby.png") else { return } // fetch images
+        imageStock.append(swipeRight)
+        imageStock.append(swipeLeft)
         imageStock.append(basketball)
         imageStock.append(football)
         imageStock.append(rugby)

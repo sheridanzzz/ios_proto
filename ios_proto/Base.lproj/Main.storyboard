@@ -339,19 +339,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Au8-XF-AK3" userLabel="KolodaView" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="100" y="244" width="175" height="200"/>
+                                <rect key="frame" x="100" y="144" width="175" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="IHb-Lt-9uJ"/>
+                                    <constraint firstAttribute="height" constant="200" id="nS6-Cn-k9T"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNA-CG-uz7">
+                                <rect key="frame" x="228" y="392" width="99" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="ITh-UG-Bwk"/>
+                                    <constraint firstAttribute="width" constant="90" id="m8o-Aw-XJM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <state key="normal" title="❤️"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vmv-f3-SCB">
+                                <rect key="frame" x="48" y="392" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="GNf-iz-FbU"/>
+                                    <constraint firstAttribute="width" constant="90" id="g7m-Og-L3a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="82"/>
+                                <state key="normal" title="💔"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UkM-1b-24f"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UkM-1b-24f" firstAttribute="trailing" secondItem="Au8-XF-AK3" secondAttribute="trailing" constant="100" id="MyP-zx-RND"/>
-                            <constraint firstItem="Au8-XF-AK3" firstAttribute="top" secondItem="UkM-1b-24f" secondAttribute="top" constant="200" id="e2G-e2-Jau"/>
-                            <constraint firstItem="Au8-XF-AK3" firstAttribute="leading" secondItem="UkM-1b-24f" secondAttribute="leading" constant="100" id="kmS-0r-CrX"/>
+                            <constraint firstItem="UkM-1b-24f" firstAttribute="trailing" secondItem="KNA-CG-uz7" secondAttribute="trailing" constant="48" id="4iL-34-ILo"/>
+                            <constraint firstItem="KNA-CG-uz7" firstAttribute="top" secondItem="Au8-XF-AK3" secondAttribute="bottom" constant="48" id="IE1-Zs-VJg"/>
+                            <constraint firstItem="Vmv-f3-SCB" firstAttribute="leading" secondItem="UkM-1b-24f" secondAttribute="leading" constant="48" id="PSX-I3-RUI"/>
+                            <constraint firstItem="UkM-1b-24f" firstAttribute="trailing" secondItem="Au8-XF-AK3" secondAttribute="trailing" constant="100" id="Tyt-aK-JwL"/>
+                            <constraint firstItem="Au8-XF-AK3" firstAttribute="leading" secondItem="UkM-1b-24f" secondAttribute="leading" constant="100" id="VAS-nM-15H"/>
+                            <constraint firstItem="KNA-CG-uz7" firstAttribute="leading" secondItem="Vmv-f3-SCB" secondAttribute="trailing" constant="90" id="gqI-r7-YGx"/>
+                            <constraint firstItem="Vmv-f3-SCB" firstAttribute="top" secondItem="Au8-XF-AK3" secondAttribute="bottom" constant="48" id="hgm-C2-C4a"/>
+                            <constraint firstItem="KNA-CG-uz7" firstAttribute="leading" secondItem="Vmv-f3-SCB" secondAttribute="trailing" constant="90" id="pej-PY-N5f"/>
+                            <constraint firstItem="Au8-XF-AK3" firstAttribute="top" secondItem="UkM-1b-24f" secondAttribute="top" constant="100" id="qve-Of-wb3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Card Swipe Screen" id="LGV-2B-YZn"/>
