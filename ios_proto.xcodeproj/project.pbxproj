@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E80332A256126DC00D2696C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E803329256126DC00D2696C /* GoogleService-Info.plist */; };
 		50281E252551C00D006BE114 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50281E242551C00D006BE114 /* MapViewController.swift */; };
 		5094B0672553395E003849BC /* KolodaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094B0662553395E003849BC /* KolodaViewController.swift */; };
 		50C25A18253AF8AB00A03316 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C25A17253AF8AB00A03316 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E803329256126DC00D2696C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50281E242551C00D006BE114 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5094B0662553395E003849BC /* KolodaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KolodaViewController.swift; sourceTree = "<group>"; };
 		50C25A14253AF8AB00A03316 /* ios_proto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_proto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 				50C25A20253AF8AE00A03316 /* Assets.xcassets */,
 				50C25A22253AF8AE00A03316 /* LaunchScreen.storyboard */,
 				50C25A25253AF8AE00A03316 /* Info.plist */,
+				3E803329256126DC00D2696C /* GoogleService-Info.plist */,
 				50281E242551C00D006BE114 /* MapViewController.swift */,
 				5094B0662553395E003849BC /* KolodaViewController.swift */,
 				50E6ADC92553D0CE00DD6C5D /* LocationAnnotation.swift */,
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C25A24253AF8AE00A03316 /* LaunchScreen.storyboard in Resources */,
+				3E80332A256126DC00D2696C /* GoogleService-Info.plist in Resources */,
 				50C25A21253AF8AE00A03316 /* Assets.xcassets in Resources */,
 				50C25A1F253AF8AB00A03316 /* Main.storyboard in Resources */,
 			);
