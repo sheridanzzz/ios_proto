@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3E531CBF2563A8260071E5C2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E531CBE2563A8260071E5C2 /* SignUpViewController.swift */; };
 		3E80332A256126DC00D2696C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E803329256126DC00D2696C /* GoogleService-Info.plist */; };
+		500F068525640AE70029033E /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F068425640AE70029033E /* Users.swift */; };
+		500F069D2564124D0029033E /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F069C2564124D0029033E /* Events.swift */; };
+		500F06A1256413D90029033E /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F06A0256413D90029033E /* Sports.swift */; };
 		50281E252551C00D006BE114 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50281E242551C00D006BE114 /* MapViewController.swift */; };
 		5094B0672553395E003849BC /* KolodaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094B0662553395E003849BC /* KolodaViewController.swift */; };
 		50C25A18253AF8AB00A03316 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C25A17253AF8AB00A03316 /* AppDelegate.swift */; };
@@ -28,6 +31,9 @@
 /* Begin PBXFileReference section */
 		3E531CBE2563A8260071E5C2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3E803329256126DC00D2696C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		500F068425640AE70029033E /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		500F069C2564124D0029033E /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		500F06A0256413D90029033E /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
 		50281E242551C00D006BE114 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5094B0662553395E003849BC /* KolodaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KolodaViewController.swift; sourceTree = "<group>"; };
 		50C25A14253AF8AB00A03316 /* ios_proto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_proto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +103,9 @@
 				50E6ADD72553D7E000DD6C5D /* ForgotPasswordViewController.swift */,
 				50E6ADDA2553D81100DD6C5D /* FacebookViewController.swift */,
 				3E531CBE2563A8260071E5C2 /* SignUpViewController.swift */,
+				500F068425640AE70029033E /* Users.swift */,
+				500F069C2564124D0029033E /* Events.swift */,
+				500F06A0256413D90029033E /* Sports.swift */,
 			);
 			path = ios_proto;
 			sourceTree = "<group>";
@@ -233,6 +242,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500F06A1256413D90029033E /* Sports.swift in Sources */,
+				500F069D2564124D0029033E /* Events.swift in Sources */,
 				3E531CBF2563A8260071E5C2 /* SignUpViewController.swift in Sources */,
 				50E6ADD22553D5AC00DD6C5D /* LoginViewController.swift in Sources */,
 				50C25A1C253AF8AB00A03316 /* ViewController.swift in Sources */,
@@ -241,6 +252,7 @@
 				50E6ADD52553D78300DD6C5D /* RegisterViewController.swift in Sources */,
 				5094B0672553395E003849BC /* KolodaViewController.swift in Sources */,
 				50E6ADD82553D7E000DD6C5D /* ForgotPasswordViewController.swift in Sources */,
+				500F068525640AE70029033E /* Users.swift in Sources */,
 				50C25A1A253AF8AB00A03316 /* SceneDelegate.swift in Sources */,
 				50281E252551C00D006BE114 /* MapViewController.swift in Sources */,
 				50E6ADCA2553D0CE00DD6C5D /* LocationAnnotation.swift in Sources */,

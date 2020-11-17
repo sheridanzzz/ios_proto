@@ -1,0 +1,41 @@
+//
+//  Events.swift
+//  ios_proto
+//
+//  Created by Sheridan's Lair on 18/11/20.
+//
+
+import UIKit
+
+class Events: Codable, Equatable {
+    
+    var id: String?
+    var eventName: String? = ""
+    var eventDateTime: Date?
+    var numberOfPlayers: Int?
+    var locationName: String? = ""
+    var long: Double?
+    var lat: Double?
+    var AnnotationImg: String? = ""
+    var status: String? = ""
+    var minNumPlayers: Int?
+    
+    
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case eventName
+        case eventDateTime
+        case numberOfPlayers
+        case locationName
+        case long
+        case lat
+        case AnnotationImg
+        case status
+        case minNumPlayers
+    }
+    
+    static func == (lhs: Events, rhs: Events) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
