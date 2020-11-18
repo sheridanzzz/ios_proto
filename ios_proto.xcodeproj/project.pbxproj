@@ -13,6 +13,9 @@
 		500F069D2564124D0029033E /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F069C2564124D0029033E /* Events.swift */; };
 		500F06A1256413D90029033E /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F06A0256413D90029033E /* Sports.swift */; };
 		50281E252551C00D006BE114 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50281E242551C00D006BE114 /* MapViewController.swift */; };
+		508C5D13256578EC00D2F5A5 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D12256578EC00D2F5A5 /* DatabaseProtocol.swift */; };
+		508C5D172565792B00D2F5A5 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D162565792B00D2F5A5 /* MulticastDelegate.swift */; };
+		508C5D1E256579A800D2F5A5 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D1D256579A800D2F5A5 /* FirebaseController.swift */; };
 		5094B0672553395E003849BC /* KolodaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094B0662553395E003849BC /* KolodaViewController.swift */; };
 		50C25A18253AF8AB00A03316 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C25A17253AF8AB00A03316 /* AppDelegate.swift */; };
 		50C25A1A253AF8AB00A03316 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C25A19253AF8AB00A03316 /* SceneDelegate.swift */; };
@@ -35,6 +38,9 @@
 		500F069C2564124D0029033E /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		500F06A0256413D90029033E /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
 		50281E242551C00D006BE114 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		508C5D12256578EC00D2F5A5 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
+		508C5D162565792B00D2F5A5 /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
+		508C5D1D256579A800D2F5A5 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		5094B0662553395E003849BC /* KolodaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KolodaViewController.swift; sourceTree = "<group>"; };
 		50C25A14253AF8AB00A03316 /* ios_proto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_proto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C25A17253AF8AB00A03316 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +72,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		508C5D102565776D00D2F5A5 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				508C5D12256578EC00D2F5A5 /* DatabaseProtocol.swift */,
+				508C5D162565792B00D2F5A5 /* MulticastDelegate.swift */,
+				508C5D1D256579A800D2F5A5 /* FirebaseController.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		50C25A0B253AF8AB00A03316 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +103,7 @@
 		50C25A16253AF8AB00A03316 /* ios_proto */ = {
 			isa = PBXGroup;
 			children = (
+				508C5D102565776D00D2F5A5 /* Database */,
 				50C25A17253AF8AB00A03316 /* AppDelegate.swift */,
 				50C25A19253AF8AB00A03316 /* SceneDelegate.swift */,
 				50C25A1B253AF8AB00A03316 /* ViewController.swift */,
@@ -245,10 +262,12 @@
 				500F06A1256413D90029033E /* Sports.swift in Sources */,
 				500F069D2564124D0029033E /* Events.swift in Sources */,
 				3E531CBF2563A8260071E5C2 /* SignUpViewController.swift in Sources */,
+				508C5D172565792B00D2F5A5 /* MulticastDelegate.swift in Sources */,
 				50E6ADD22553D5AC00DD6C5D /* LoginViewController.swift in Sources */,
 				50C25A1C253AF8AB00A03316 /* ViewController.swift in Sources */,
 				50E6ADDB2553D81100DD6C5D /* FacebookViewController.swift in Sources */,
 				50C25A18253AF8AB00A03316 /* AppDelegate.swift in Sources */,
+				508C5D1E256579A800D2F5A5 /* FirebaseController.swift in Sources */,
 				50E6ADD52553D78300DD6C5D /* RegisterViewController.swift in Sources */,
 				5094B0672553395E003849BC /* KolodaViewController.swift in Sources */,
 				50E6ADD82553D7E000DD6C5D /* ForgotPasswordViewController.swift in Sources */,
@@ -256,6 +275,7 @@
 				50C25A1A253AF8AB00A03316 /* SceneDelegate.swift in Sources */,
 				50281E252551C00D006BE114 /* MapViewController.swift in Sources */,
 				50E6ADCA2553D0CE00DD6C5D /* LocationAnnotation.swift in Sources */,
+				508C5D13256578EC00D2F5A5 /* DatabaseProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

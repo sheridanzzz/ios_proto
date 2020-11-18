@@ -16,7 +16,7 @@ class Events: Codable, Equatable {
     var locationName: String? = ""
     var long: Double?
     var lat: Double?
-    var AnnotationImg: String? = ""
+    var annotationImg: String? = ""
     var status: String? = ""
     var minNumPlayers: Int?
     
@@ -30,7 +30,7 @@ class Events: Codable, Equatable {
         case locationName
         case long
         case lat
-        case AnnotationImg
+        case annotationImg
         case status
         case minNumPlayers
     }
