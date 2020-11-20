@@ -10,6 +10,7 @@
 		3E531CBF2563A8260071E5C2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E531CBE2563A8260071E5C2 /* SignUpViewController.swift */; };
 		3E80332A256126DC00D2696C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E803329256126DC00D2696C /* GoogleService-Info.plist */; };
 		3EB71E432567D7FD0020EDD6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB71E422567D7FD0020EDD6 /* TabBarController.swift */; };
+		3EB71E462567FB8E0020EDD6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB71E452567FB8E0020EDD6 /* SettingsViewController.swift */; };
 		500F068525640AE70029033E /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F068425640AE70029033E /* Users.swift */; };
 		500F069D2564124D0029033E /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F069C2564124D0029033E /* Events.swift */; };
 		500F06A1256413D90029033E /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F06A0256413D90029033E /* Sports.swift */; };
@@ -39,6 +40,7 @@
 		3E531CBE2563A8260071E5C2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3E803329256126DC00D2696C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3EB71E422567D7FD0020EDD6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3EB71E452567FB8E0020EDD6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		500F068425640AE70029033E /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		500F069C2564124D0029033E /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		500F06A0256413D90029033E /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				50A210C42567C5D900FA663A /* EventTableViewCell.swift */,
 				50A210C72567C86F00FA663A /* AddEventDelegate.swift */,
 				3EB71E422567D7FD0020EDD6 /* TabBarController.swift */,
+				3EB71E452567FB8E0020EDD6 /* SettingsViewController.swift */,
 			);
 			path = ios_proto;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				50E6ADD52553D78300DD6C5D /* RegisterViewController.swift in Sources */,
 				50A210C22567C4C500FA663A /* EventTableViewController.swift in Sources */,
 				50A210C52567C5D900FA663A /* EventTableViewCell.swift in Sources */,
+				3EB71E462567FB8E0020EDD6 /* SettingsViewController.swift in Sources */,
 				5094B0672553395E003849BC /* KolodaViewController.swift in Sources */,
 				50E6ADD82553D7E000DD6C5D /* ForgotPasswordViewController.swift in Sources */,
 				500F068525640AE70029033E /* Users.swift in Sources */,
