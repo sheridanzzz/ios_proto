@@ -101,6 +101,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     //change the way user is found
     //fix this
+    
         func setUpUsersListener() {
             usersRef = database.collection("users")
             usersRef?.whereField("uuid", isEqualTo: DEFAULT_USER_NAME).addSnapshotListener {
