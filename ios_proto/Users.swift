@@ -19,7 +19,7 @@ class Users: Codable, Equatable {
     var postcode: Int?
     var registerationDate: Date?
     var profileImg: String? = ""
-    
+    var uuid: String? = ""
     
     
     enum CodingKeys: String, CodingKey {
@@ -33,6 +33,7 @@ class Users: Codable, Equatable {
         case postcode
         case registerationDate
         case profileImg
+        case uuid
     }
     
     static func == (lhs: Users, rhs: Users) -> Bool {

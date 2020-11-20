@@ -103,7 +103,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     //fix this
         func setUpUsersListener() {
             usersRef = database.collection("users")
-            usersRef?.whereField("firstName", isEqualTo: DEFAULT_USER_NAME).addSnapshotListener {
+            usersRef?.whereField("uuid", isEqualTo: DEFAULT_USER_NAME).addSnapshotListener {
          (querySnapshot, error) in
          guard let querySnapshot = querySnapshot,
          let userSnapshot = querySnapshot.documents.first else {
@@ -202,7 +202,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
 //         func parseUserSnapshot(snapshot: QueryDocumentSnapshot) {
 //         currentUser = Users()
-//            currentUser.firstName = snapshot.data()["firstName"] as! String
+//            currentUser.firstName = snapshot.data()["firstName"] as? String
 //            currentUser.id = snapshot.documentID
 //
 //         if let userReferences = snapshot.data()["users"] as? [DocumentReference] {
@@ -221,7 +221,6 @@ class FirebaseController: NSObject, DatabaseProtocol {
 //             }
 //             }
 //         }
-    
     // MARK:- Utility Functions
     func getEventIndexByID(_ id: String) -> Int? {
         if let event = getEventByID(id) {
@@ -317,7 +316,44 @@ class FirebaseController: NSObject, DatabaseProtocol {
     //            listeners.removeDelegate(listener)
     //            }
     
-    func addUser(firstName: String, LastName: String, gender: String, dateOfBirth: Date, address: String, state: String, postcode: Int, registerationDate: Date, profileImg: String) -> Users {
+    func addSportToUser(sport: Sports, user: Users) -> Bool {
+        guard let sportID = sport.id, let userID = user.id else {
+            return false
+        }
+        if let newSportRef = sportsRef?.document(sportID) {
+            usersRef?.document(userID).updateData(
+                ["sports" : FieldValue.arrayUnion([newSportRef])]
+            )
+        }
+        return true
+    }
+    
+    func addEventToUser(event: Events, user: Users) -> Bool {
+        guard let eventID = event.id, let userID = user.id else {
+            return false
+        }
+        if let newEventRef = eventsRef?.document(eventID) {
+            usersRef?.document(userID).updateData(
+                ["events" : FieldValue.arrayUnion([newEventRef])]
+            )
+        }
+        return true
+    }
+    
+    func addUserToEvents(user: Users, event: Events) -> Bool {
+        guard let userID = user.id, let eventID = event.id else {
+            return false
+        }
+        if let newUserRef = usersRef?.document(userID) {
+            eventsRef?.document(eventID).updateData(
+                ["users" : FieldValue.arrayUnion([newUserRef])]
+            )
+        }
+        return true
+    }
+    
+    
+    func addUser(firstName: String, LastName: String, gender: String, dateOfBirth: Date, address: String, state: String, postcode: Int, registerationDate: Date, profileImg: String, uuid: String) -> Users {
         let user = Users()
         user.firstName = firstName
         user.LastName = LastName
@@ -328,6 +364,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         user.postcode = postcode
         user.registerationDate = registerationDate
         user.profileImg = profileImg
+        user.uuid = uuid
         
         do {
             if let userRef = try usersRef?.addDocument(from: user) {
