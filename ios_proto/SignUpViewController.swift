@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 
 class SignUpViewController: UIViewController {
-
+    
     @IBOutlet weak var email_textField: UITextField!
     @IBOutlet weak var pass_textField: UITextField!
     @IBOutlet weak var retype_pass_textField: UITextField!
@@ -26,26 +26,37 @@ class SignUpViewController: UIViewController {
                 if let e = error {
                     print(e.localizedDescription)
                     let alert = UIAlertController(title: "Error!", message: e.localizedDescription, preferredStyle: .alert)
-
+                    
                     alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-
+                    
                     self.present(alert, animated: true)
                 }
                 else {
-                    self.performSegue(withIdentifier: "SignUpToHome", sender: self)
+                    // after login is done, maybe put this in the login web service completion block
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+                    
+                    // This is to get the SceneDelegate object from your view controller
+                    // then call the change root view controller function to change to main tab bar
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+                    
+                    //I COMMENTEDT THIS LINE OUT
+                    
+                    //self.performSegue(withIdentifier: "SignUpToHome", sender: self)
                 }
             }
         }
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
