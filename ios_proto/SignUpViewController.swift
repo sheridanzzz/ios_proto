@@ -47,16 +47,35 @@ class SignUpViewController: UIViewController {
                 }
             }
         }
+        
+        //add for all text fields
+        //        if email_textField.text != "" && retype_pass_textField.text != "" {
+        //            let email = email_textField.text!
+        //            let password = retype_pass_textField.text!
+        //            let _ = databaseController?.addUser(email: email, password: password)
+        //            navigationController?.popViewController(animated: true)
+        //            return
+        //        }
+        //
+        //        var errorMsg = "Please ensure all fields are filled:\n"
+        //
+        //        if nameTextField.text == "" {
+        //            errorMsg += "- Must provide a email\n"
+        //        }
+        //        if abilitiesTextField.text == "" {
+        //            errorMsg += "- Must provide password"
+        //        }
+        //
+        //        displayMessage(title: "Not all fields filled", message: errorMsg)
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func displayMessage(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message,
+            preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style:
+            UIAlertAction.Style.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     
 }

@@ -19,6 +19,7 @@
 		508C5D172565792B00D2F5A5 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D162565792B00D2F5A5 /* MulticastDelegate.swift */; };
 		508C5D1E256579A800D2F5A5 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D1D256579A800D2F5A5 /* FirebaseController.swift */; };
 		5094B0672553395E003849BC /* KolodaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094B0662553395E003849BC /* KolodaViewController.swift */; };
+		509D0D212568743200BBA120 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D0D202568743200BBA120 /* CreateEventViewController.swift */; };
 		50A210C22567C4C500FA663A /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A210C12567C4C500FA663A /* EventTableViewController.swift */; };
 		50A210C52567C5D900FA663A /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A210C42567C5D900FA663A /* EventTableViewCell.swift */; };
 		50A210C82567C86F00FA663A /* AddEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A210C72567C86F00FA663A /* AddEventDelegate.swift */; };
@@ -49,6 +50,7 @@
 		508C5D162565792B00D2F5A5 /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		508C5D1D256579A800D2F5A5 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		5094B0662553395E003849BC /* KolodaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KolodaViewController.swift; sourceTree = "<group>"; };
+		509D0D202568743200BBA120 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		50A210C12567C4C500FA663A /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		50A210C42567C5D900FA663A /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		50A210C72567C86F00FA663A /* AddEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				50A210C72567C86F00FA663A /* AddEventDelegate.swift */,
 				3EB71E422567D7FD0020EDD6 /* TabBarController.swift */,
 				3EB71E452567FB8E0020EDD6 /* SettingsViewController.swift */,
+				509D0D202568743200BBA120 /* CreateEventViewController.swift */,
 			);
 			path = ios_proto;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				50281E252551C00D006BE114 /* MapViewController.swift in Sources */,
 				3EB71E432567D7FD0020EDD6 /* TabBarController.swift in Sources */,
 				50E6ADCA2553D0CE00DD6C5D /* LocationAnnotation.swift in Sources */,
+				509D0D212568743200BBA120 /* CreateEventViewController.swift in Sources */,
 				508C5D13256578EC00D2F5A5 /* DatabaseProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
