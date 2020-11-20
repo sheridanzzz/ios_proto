@@ -137,6 +137,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
             event.id = eventID
             if change.type == .added {
                 eventList.append(event)
+                //print(event.eventName)
             }
             else if change.type == .modified {
                 let index = getEventIndexByID(eventID)!

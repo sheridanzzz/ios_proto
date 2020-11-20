@@ -25,6 +25,7 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         databaseController = appDelegate.databaseController
         
         filteredEvents = allEvents
+        //print(allEvents)
         
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -52,7 +53,7 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         guard let searchText = searchController.searchBar.text?.lowercased() else {
             return
         }
-        
+        print(searchText)
         if searchText.count > 0 {
             filteredEvents = allEvents.filter({ (event: Events) -> Bool in
                 return event.eventName?.lowercased().contains(searchText) ?? false
@@ -70,13 +71,9 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         return 1
     }
     
-    //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //        if section == SECTION_HEROES {
-    //            return filteredEvents.count
-    //        }
-    //
-    //        return 1
-    //    }
+        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                return filteredEvents.count
+        }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let eventCell = tableView.dequeueReusableCell(withIdentifier: CELL_EVENT,
@@ -135,6 +132,7 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         
         if eventDelegate?.addEvent(newEvent: filteredEvents[indexPath.row]) ?? false {
             navigationController?.popViewController(animated: false)
+            
             return
         }
         tableView.deselectRow(at: indexPath, animated: true)
