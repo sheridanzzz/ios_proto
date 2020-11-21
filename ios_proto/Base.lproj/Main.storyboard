@@ -657,14 +657,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" id="LA3-4g-qkX" customClass="EventTableViewCell" customModule="ios_proto" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LA3-4g-qkX" id="GfS-m4-lSt">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kt7-N8-8Nc">
-                                            <rect key="frame" x="16" y="11" width="97" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="97" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -737,14 +737,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Au8-XF-AK3" userLabel="KolodaView" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="100" y="100" width="164" height="200"/>
+                                <rect key="frame" x="100" y="100" width="162" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="nS6-Cn-k9T"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNA-CG-uz7">
-                                <rect key="frame" x="226" y="348" width="90" height="90"/>
+                                <rect key="frame" x="228" y="348" width="86" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="ITh-UG-Bwk"/>
                                     <constraint firstAttribute="width" constant="90" id="m8o-Aw-XJM"/>
@@ -753,7 +753,7 @@
                                 <state key="normal" title="❤️"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vmv-f3-SCB">
-                                <rect key="frame" x="48" y="348" width="88" height="90"/>
+                                <rect key="frame" x="48" y="348" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="GNf-iz-FbU"/>
                                     <constraint firstAttribute="width" constant="90" id="g7m-Og-L3a"/>
