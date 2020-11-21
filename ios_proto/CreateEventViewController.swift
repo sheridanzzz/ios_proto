@@ -51,6 +51,7 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
+        //dnjkwndejknjk
     }
     
     @objc func dateChanged(datePicker: UIDatePicker){
