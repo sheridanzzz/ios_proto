@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0537D1256978F600044B76 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0537D0256978F600044B76 /* Channel.swift */; };
+		3E0537D42569793C00044B76 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0537D32569793C00044B76 /* Sender.swift */; };
+		3E0537F325697A0B00044B76 /* ChannelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0537F225697A0B00044B76 /* ChannelMessage.swift */; };
+		3E0537F625697AC300044B76 /* ChannelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0537F525697AC300044B76 /* ChannelsTableViewController.swift */; };
+		3E0537F925697AF300044B76 /* ChatMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0537F825697AF300044B76 /* ChatMessagesViewController.swift */; };
 		3E531CBF2563A8260071E5C2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E531CBE2563A8260071E5C2 /* SignUpViewController.swift */; };
 		3E80332A256126DC00D2696C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E803329256126DC00D2696C /* GoogleService-Info.plist */; };
 		3EB71E432567D7FD0020EDD6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB71E422567D7FD0020EDD6 /* TabBarController.swift */; };
@@ -38,6 +43,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E0537D0256978F600044B76 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		3E0537D32569793C00044B76 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		3E0537F225697A0B00044B76 /* ChannelMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelMessage.swift; sourceTree = "<group>"; };
+		3E0537F525697AC300044B76 /* ChannelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsTableViewController.swift; sourceTree = "<group>"; };
+		3E0537F825697AF300044B76 /* ChatMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesViewController.swift; sourceTree = "<group>"; };
 		3E531CBE2563A8260071E5C2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3E803329256126DC00D2696C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3EB71E422567D7FD0020EDD6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -141,6 +151,11 @@
 				3EB71E422567D7FD0020EDD6 /* TabBarController.swift */,
 				3EB71E452567FB8E0020EDD6 /* SettingsViewController.swift */,
 				509D0D202568743200BBA120 /* CreateEventViewController.swift */,
+				3E0537D0256978F600044B76 /* Channel.swift */,
+				3E0537D32569793C00044B76 /* Sender.swift */,
+				3E0537F225697A0B00044B76 /* ChannelMessage.swift */,
+				3E0537F525697AC300044B76 /* ChannelsTableViewController.swift */,
+				3E0537F825697AF300044B76 /* ChatMessagesViewController.swift */,
 			);
 			path = ios_proto;
 			sourceTree = "<group>";
@@ -278,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				500F06A1256413D90029033E /* Sports.swift in Sources */,
+				3E0537D1256978F600044B76 /* Channel.swift in Sources */,
 				500F069D2564124D0029033E /* Events.swift in Sources */,
 				3E531CBF2563A8260071E5C2 /* SignUpViewController.swift in Sources */,
 				50A210C82567C86F00FA663A /* AddEventDelegate.swift in Sources */,
@@ -286,7 +302,9 @@
 				50C25A1C253AF8AB00A03316 /* ViewController.swift in Sources */,
 				50E6ADDB2553D81100DD6C5D /* FacebookViewController.swift in Sources */,
 				50C25A18253AF8AB00A03316 /* AppDelegate.swift in Sources */,
+				3E0537F625697AC300044B76 /* ChannelsTableViewController.swift in Sources */,
 				508C5D1E256579A800D2F5A5 /* FirebaseController.swift in Sources */,
+				3E0537F325697A0B00044B76 /* ChannelMessage.swift in Sources */,
 				50E6ADD52553D78300DD6C5D /* RegisterViewController.swift in Sources */,
 				50A210C22567C4C500FA663A /* EventTableViewController.swift in Sources */,
 				50A210C52567C5D900FA663A /* EventTableViewCell.swift in Sources */,
@@ -294,7 +312,9 @@
 				5094B0672553395E003849BC /* KolodaViewController.swift in Sources */,
 				50E6ADD82553D7E000DD6C5D /* ForgotPasswordViewController.swift in Sources */,
 				500F068525640AE70029033E /* Users.swift in Sources */,
+				3E0537F925697AF300044B76 /* ChatMessagesViewController.swift in Sources */,
 				50C25A1A253AF8AB00A03316 /* SceneDelegate.swift in Sources */,
+				3E0537D42569793C00044B76 /* Sender.swift in Sources */,
 				50281E252551C00D006BE114 /* MapViewController.swift in Sources */,
 				3EB71E432567D7FD0020EDD6 /* TabBarController.swift in Sources */,
 				50E6ADCA2553D0CE00DD6C5D /* LocationAnnotation.swift in Sources */,
