@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gG6-rs-hKd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fHl-FD-ORp">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -703,30 +703,66 @@
             <objects>
                 <viewController id="Kxw-kb-WIW" customClass="CreateEventViewController" customModule="ios_proto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3W8-67-yrG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFD-HZ-aeC">
-                                <rect key="frame" x="16" y="617" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <color key="tintColor" systemColor="linkColor"/>
-                                <state key="normal" title="Create Event">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="createEvent:" destination="Kxw-kb-WIW" eventType="touchUpInside" id="3Sb-aI-6Bp"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FEb-Fo-fWJ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="1007"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mz2-TA-yOa">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUW-WU-w4I">
+                                                <rect key="frame" x="10" y="10" width="355" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN0-ZM-XGD">
+                                                <rect key="frame" x="10" y="969" width="355" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="TN0-ZM-XGD" secondAttribute="bottom" constant="10" id="4Zm-7b-4aN"/>
+                                            <constraint firstItem="SUW-WU-w4I" firstAttribute="top" secondItem="Mz2-TA-yOa" secondAttribute="top" constant="10" id="FUb-Wv-GXl"/>
+                                            <constraint firstAttribute="height" constant="1000" id="RNd-Xv-m98"/>
+                                            <constraint firstItem="SUW-WU-w4I" firstAttribute="leading" secondItem="Mz2-TA-yOa" secondAttribute="leading" constant="10" id="gWu-rx-ENc"/>
+                                            <constraint firstAttribute="trailing" secondItem="TN0-ZM-XGD" secondAttribute="trailing" constant="10" id="hQI-kK-zvF"/>
+                                            <constraint firstItem="TN0-ZM-XGD" firstAttribute="leading" secondItem="Mz2-TA-yOa" secondAttribute="leading" constant="10" id="iqL-QB-5xV"/>
+                                            <constraint firstAttribute="trailing" secondItem="SUW-WU-w4I" secondAttribute="trailing" constant="10" id="saP-aW-lRK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Mz2-TA-yOa" secondAttribute="trailing" id="cAq-Ut-vEe"/>
+                                    <constraint firstItem="Mz2-TA-yOa" firstAttribute="leading" secondItem="FEb-Fo-fWJ" secondAttribute="leading" id="e5o-lc-MiH"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mz2-TA-yOa" secondAttribute="bottom" id="nbL-Jt-7x2"/>
+                                    <constraint firstItem="Mz2-TA-yOa" firstAttribute="top" secondItem="FEb-Fo-fWJ" secondAttribute="top" id="nxR-o0-PEE"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KnO-7Q-j67"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FEb-Fo-fWJ" firstAttribute="top" secondItem="KnO-7Q-j67" secondAttribute="top" id="9xD-SE-o9w"/>
+                            <constraint firstItem="FEb-Fo-fWJ" firstAttribute="bottom" secondItem="KnO-7Q-j67" secondAttribute="bottom" id="Lv4-03-mLl"/>
+                            <constraint firstItem="Mz2-TA-yOa" firstAttribute="width" secondItem="3W8-67-yrG" secondAttribute="width" id="Vca-w9-jml"/>
+                            <constraint firstItem="FEb-Fo-fWJ" firstAttribute="leading" secondItem="KnO-7Q-j67" secondAttribute="leading" id="XT0-jg-RRz"/>
+                            <constraint firstItem="FEb-Fo-fWJ" firstAttribute="trailing" secondItem="KnO-7Q-j67" secondAttribute="trailing" id="agJ-sa-iwj"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Event" id="usF-hb-l1o"/>
+                    <navigationItem key="navigationItem" title="Create Event" id="usF-hb-l1o">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="mdE-gw-Gx9"/>
+                    </navigationItem>
+                    <size key="freeformSize" width="375" height="1100"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kt0-le-Ehe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671.20000000000005" y="-1305.697151424288"/>
+            <point key="canvasLocation" x="-671.20000000000005" y="-1306.5967016491754"/>
         </scene>
         <!--Card Swipe Screen-->
         <scene sceneID="xQI-5w-189">
@@ -825,7 +861,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mgL-X8-S2d">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gt6-hz-9fa">
@@ -1091,7 +1127,7 @@
                     <connections>
                         <segue destination="JDW-9M-gjK" kind="relationship" relationship="viewControllers" id="tVD-Zi-VHW"/>
                         <segue destination="NXT-Kx-90J" kind="relationship" relationship="viewControllers" id="811-Q2-dzB"/>
-                        <segue destination="S4V-TS-Q4f" kind="relationship" relationship="viewControllers" id="eyz-vY-EPJ"/>
+                        <segue destination="Xpy-ov-Cmz" kind="relationship" relationship="viewControllers" id="XqO-IO-4Ua"/>
                         <segue destination="wF3-1P-2Jy" kind="relationship" relationship="viewControllers" id="13B-28-asK"/>
                         <segue destination="HOH-eq-LZa" kind="relationship" relationship="viewControllers" id="VX7-KF-2wJ"/>
                     </connections>
@@ -1193,10 +1229,11 @@
             </objects>
             <point key="canvasLocation" x="696.79999999999995" y="1125.7871064467768"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Events-->
         <scene sceneID="sfs-NE-L0f">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xpy-ov-Cmz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Events" image="star.circle.fill" catalog="system" id="cjQ-6G-VVQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hQi-WX-3yi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
