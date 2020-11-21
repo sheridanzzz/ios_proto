@@ -25,9 +25,10 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
     var currentLocation: CLLocationCoordinate2D?
     var listenerType: ListenerType = .all
     
+    
     private var datePicker: UIDatePicker?
     
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,12 +50,35 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
         let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap))
         mapView.addGestureRecognizer(longTapGesture)
         
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = #colorLiteral(red: 0.224999994, green: 0.3549999893, blue: 1, alpha: 1)
+        toolBar.sizeToFit()
+        
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.viewTapped(gestureRecognizer:)))
+        toolBar.setItems([doneButton], animated: true)
+        
+        
+        toolBar.isUserInteractionEnabled = true
+        eventDateTimeTextField.inputAccessoryView = toolBar
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
         //dnjkwndejknjk
     }
     
+        @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer)
+        {
+            view.endEditing(true)
+        }
+    
     @objc func dateChanged(datePicker: UIDatePicker){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        eventDateTimeTextField.text = dateFormatter.string(from: datePicker.date)
+        view.endEditing(true)
         
     }
     
@@ -71,8 +95,8 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
             let longi = long
             
             
-            let _ = databaseController?.addEvent(eventName: newEventName, eventDateTime: <#T##Date#>, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: "", status: "", minNumPlayers: Int(newMinPlayers) ?? 0)
-            navigationController?.popViewController(animated: true)
+//            let _ = databaseController?.addEvent(eventName: newEventName, eventDateTime: <#T##Date#>, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: "", status: "", minNumPlayers: Int(newMinPlayers) ?? 0)
+//            navigationController?.popViewController(animated: true)
             return
         }
         
