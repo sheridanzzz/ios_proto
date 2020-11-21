@@ -17,12 +17,26 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         logoImageView.image = UIImage(named: "SportsCentralLogo.png")
         // Do any additional setup after loading the view.
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     @IBAction func login_button(_ sender: Any) {
-        //Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-          //guard let strongSelf = self else { return }
-          // ...
-        //}
+        if let email = email_textField.text, let password = pass_textField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                guard let strongSelf = self else { return }
+                if let e = error {
+                    print(e)
+                }
+                else {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+                    
+                    // This is to get the SceneDelegate object from your view controller
+                    // then call the change root view controller function to change to main tab bar
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+                }
+            }
+        }
     }
     @IBAction func facebook_button(_ sender: Any) {
     }
