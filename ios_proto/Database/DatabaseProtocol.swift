@@ -39,6 +39,7 @@ protocol DatabaseProtocol: AnyObject {
     func addSportToUser(sport: Sports, user: Users) -> Bool
     func addEventToUser(event: Events, user: Users) -> Bool
     func addUserToEvents(user: Users, event: Events) -> Bool
+    func addSportToEvent(sport: Sports, event: Events) -> Bool
     func deleteUser(user: Users)
     func deleteEvent(event: Events)
     func deleteSport(sport: Sports)

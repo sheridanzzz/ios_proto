@@ -19,6 +19,8 @@ class Events: Codable, Equatable {
     var annotationImg: String? = ""
     var status: String? = ""
     var minNumPlayers: Int?
+    //var eventSport = Sports()
+    //var eventsUsers = [Users]()
     
     
     
@@ -33,6 +35,7 @@ class Events: Codable, Equatable {
         case annotationImg
         case status
         case minNumPlayers
+        //case eventSport
     }
     
     static func == (lhs: Events, rhs: Events) -> Bool {

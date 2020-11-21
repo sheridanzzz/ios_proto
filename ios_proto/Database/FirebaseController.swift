@@ -353,6 +353,18 @@ class FirebaseController: NSObject, DatabaseProtocol {
         return true
     }
     
+    func addSportToEvent(sport: Sports, event: Events) -> Bool {
+        guard let sportID = sport.id, let eventID = event.id else {
+            return false
+        }
+        if let newSportRef = sportsRef?.document(sportID) {
+            eventsRef?.document(eventID).updateData(
+                ["users" : FieldValue.arrayUnion([newSportRef])]
+            )
+        }
+        return true
+    }
+    
     
     func addUser(firstName: String, LastName: String, gender: String, dateOfBirth: Date, address: String, state: String, postcode: Int, registerationDate: Date, profileImg: String, uuid: String) -> Users {
         let user = Users()
