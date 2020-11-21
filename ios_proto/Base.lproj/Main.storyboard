@@ -407,14 +407,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" id="LA3-4g-qkX" customClass="EventTableViewCell" customModule="ios_proto" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LA3-4g-qkX" id="GfS-m4-lSt">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kt7-N8-8Nc">
-                                            <rect key="frame" x="16" y="11" width="97" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="97" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -529,6 +529,15 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Sport:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIx-uk-rXr">
+                                                <rect key="frame" x="10" y="656" width="355" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXO-HR-dDU">
+                                                <rect key="frame" x="0.0" y="687" width="375" height="216"/>
+                                            </pickerView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -542,10 +551,13 @@
                                             <constraint firstItem="hfw-ZQ-I35" firstAttribute="top" secondItem="IMP-5K-1Cs" secondAttribute="bottom" constant="20" id="Hek-ge-whW"/>
                                             <constraint firstAttribute="trailing" secondItem="4BU-Ht-fVa" secondAttribute="trailing" constant="10" id="IDO-2Z-Q3a"/>
                                             <constraint firstItem="Zdu-r1-bqa" firstAttribute="leading" secondItem="Mz2-TA-yOa" secondAttribute="leading" constant="10" id="IHq-ir-eWk"/>
+                                            <constraint firstItem="KXO-HR-dDU" firstAttribute="top" secondItem="PIx-uk-rXr" secondAttribute="bottom" constant="10" id="IJE-Ae-dKh"/>
                                             <constraint firstAttribute="trailing" secondItem="sus-Yy-qP8" secondAttribute="trailing" constant="10" id="Jyb-5M-9OE"/>
+                                            <constraint firstItem="PIx-uk-rXr" firstAttribute="leading" secondItem="Mz2-TA-yOa" secondAttribute="leading" constant="10" id="Lgr-gq-KCb"/>
                                             <constraint firstItem="sYQ-mE-LtS" firstAttribute="top" secondItem="PKN-ig-ldv" secondAttribute="bottom" constant="10" id="MHQ-h2-8nN"/>
                                             <constraint firstAttribute="trailing" secondItem="SzN-bq-dWg" secondAttribute="trailing" constant="10" id="OzH-UR-fVB"/>
                                             <constraint firstAttribute="trailing" secondItem="PKN-ig-ldv" secondAttribute="trailing" constant="10" id="P0t-FB-1WL"/>
+                                            <constraint firstAttribute="trailing" secondItem="PIx-uk-rXr" secondAttribute="trailing" constant="10" id="Px2-qQ-hPh"/>
                                             <constraint firstItem="PKN-ig-ldv" firstAttribute="leading" secondItem="Mz2-TA-yOa" secondAttribute="leading" constant="10" id="Q3V-W7-D71"/>
                                             <constraint firstItem="hfw-ZQ-I35" firstAttribute="leading" secondItem="Mz2-TA-yOa" secondAttribute="leading" constant="10" id="QCJ-ct-DrW"/>
                                             <constraint firstAttribute="height" constant="1000" id="RNd-Xv-m98"/>
@@ -555,6 +567,7 @@
                                             <constraint firstItem="sus-Yy-qP8" firstAttribute="top" secondItem="4BU-Ht-fVa" secondAttribute="bottom" constant="20" id="W5F-Sc-izb"/>
                                             <constraint firstItem="PKN-ig-ldv" firstAttribute="top" secondItem="SzN-bq-dWg" secondAttribute="bottom" constant="20" id="XQT-Jp-c7e"/>
                                             <constraint firstAttribute="trailing" secondItem="hfw-ZQ-I35" secondAttribute="trailing" constant="10" id="XQv-zz-Trt"/>
+                                            <constraint firstAttribute="trailing" secondItem="KXO-HR-dDU" secondAttribute="trailing" id="XpY-Za-nIH"/>
                                             <constraint firstAttribute="trailing" secondItem="Yxm-bD-NNa" secondAttribute="trailing" constant="10" id="ZRR-hI-Ymm"/>
                                             <constraint firstItem="sYQ-mE-LtS" firstAttribute="leading" secondItem="Mz2-TA-yOa" secondAttribute="leading" constant="10" id="ZpK-h3-YcF"/>
                                             <constraint firstItem="f0c-Gn-mhl" firstAttribute="leading" secondItem="Mz2-TA-yOa" secondAttribute="leading" constant="10" id="d3Z-aj-UsC"/>
@@ -563,6 +576,8 @@
                                             <constraint firstItem="SUW-WU-w4I" firstAttribute="leading" secondItem="Mz2-TA-yOa" secondAttribute="leading" constant="10" id="gWu-rx-ENc"/>
                                             <constraint firstAttribute="trailing" secondItem="f0c-Gn-mhl" secondAttribute="trailing" constant="10" id="jwN-En-L0h"/>
                                             <constraint firstAttribute="trailing" secondItem="hUa-6m-XQi" secondAttribute="trailing" constant="10" id="kWd-lQ-d7d"/>
+                                            <constraint firstItem="PIx-uk-rXr" firstAttribute="top" secondItem="sYQ-mE-LtS" secondAttribute="bottom" constant="20" id="kl4-HC-Yco"/>
+                                            <constraint firstItem="KXO-HR-dDU" firstAttribute="leading" secondItem="Mz2-TA-yOa" secondAttribute="leading" id="ld8-Xd-JOb"/>
                                             <constraint firstItem="f0c-Gn-mhl" firstAttribute="top" secondItem="Zdu-r1-bqa" secondAttribute="bottom" constant="20" id="ldv-Ym-yve"/>
                                             <constraint firstItem="SzN-bq-dWg" firstAttribute="top" secondItem="sus-Yy-qP8" secondAttribute="bottom" constant="10" id="n4j-Kg-iNn"/>
                                             <constraint firstAttribute="trailing" secondItem="SUW-WU-w4I" secondAttribute="trailing" constant="10" id="saP-aW-lRK"/>
@@ -605,6 +620,7 @@
                         <outlet property="mapView" destination="SzN-bq-dWg" id="5Hx-3R-b1E"/>
                         <outlet property="maxNumPlayersTextField" destination="Yxm-bD-NNa" id="EMN-Ah-FpV"/>
                         <outlet property="minNumPlayersTextField" destination="4BU-Ht-fVa" id="avn-HZ-NbY"/>
+                        <outlet property="sportPicker" destination="KXO-HR-dDU" id="p0T-Ry-SuO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kt0-le-Ehe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
