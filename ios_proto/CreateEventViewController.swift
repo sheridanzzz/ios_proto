@@ -19,6 +19,8 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var eventDateTimeTextField: UITextField!
     
+    @IBOutlet weak var sportPicker: UIPickerView!
+    
     var lat = 0.0
     var long = 0.0
     var locationManager: CLLocationManager = CLLocationManager()
