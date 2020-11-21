@@ -15,4 +15,5 @@ class Channel: NSObject {
         self.id = id
         self.name = name
     }
+    //gdfg
 }
