@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
 
 class FacebookViewController: UIViewController {
 
@@ -13,6 +15,11 @@ class FacebookViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let loginButton = FBLoginButton()
+        // This can place the login button at the center of your view
+        loginButton.center = view.center
+        view.addSubview(loginButton)
+        loginButton.permissions = ["public_profile","email"]
     }
     
 
