@@ -13,11 +13,11 @@ class Users: Codable, Equatable {
     var firstName: String? = ""
     var LastName: String? = ""
     var gender: String? = ""
-    var dateOfBirth: Date?
+    var dateOfBirth: String? = ""
     //var address: String? = ""
     var state: String? = ""
     var postcode: Int?
-    var registerationDate: Date?
+    var registerationDate: String? = ""
     var profileImg: String? = ""
     var uuid: String? = ""
     

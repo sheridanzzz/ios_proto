@@ -427,7 +427,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     }
     
     
-    func addUser(firstName: String, LastName: String, gender: String, dateOfBirth: Date, state: String, postcode: Int, registerationDate: Date, profileImg: String, uuid: String) -> Users {
+    func addUser(firstName: String, LastName: String, gender: String, dateOfBirth: String, state: String, postcode: Int, registerationDate: String, profileImg: String, uuid: String) -> Users {
         let user = Users()
         user.firstName = firstName
         user.LastName = LastName

@@ -90,7 +90,7 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
         let userCell = tableView.dequeueReusableCell(withIdentifier: CELL_USER,
                                                       for: indexPath) as! SearchUserTableViewCell
         let user = filteredUsers[indexPath.row]
-        print(user)
+        print(user.firstName)
         userCell.userNameLabel.text = user.firstName
         return userCell
     }
@@ -148,6 +148,7 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
     func onUserListChange(change: DatabaseChange, users: [Users]) {
         allUsers = users
         print(allUsers.count)
+        print("user")
         updateSearchResults(for: navigationItem.searchController!)
     }
     
