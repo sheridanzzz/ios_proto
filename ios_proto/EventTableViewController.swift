@@ -16,6 +16,15 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
     weak var eventDelegate: AddEventDelegate?
     weak var databaseController: DatabaseProtocol?
     var listenerType: ListenerType = .all
+    var eventName: String = ""
+    var eventDateTime: String = ""
+    var locName: String = ""
+    var NoOfPlayers: String = ""
+    var minNoOfPlayers: String = ""
+    var sportType: String = ""
+    var icon: String = ""
+    var lat: Double = 0.0
+    var long: Double = 0.0
     
     
     override func viewDidLoad() {
@@ -90,53 +99,50 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
     }
     
     
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let event = filteredEvents[indexPath.row]
+        eventName = event.eventName ?? ""
+        eventDateTime = df.string(from: event.eventDateTime!)
+        locName = event.locationName ?? ""
+        NoOfPlayers = String(event.numberOfPlayers!)
+        minNoOfPlayers = String(event.minNumPlayers!)
+        sportType = event.sport ?? ""
+        icon = event.annotationImg ?? ""
+        lat = event.lat!
+        long = event.long!
+        
+        
+        self.performSegue(withIdentifier: "eventDetailsSegue", sender: self)
             tableView.deselectRow(at: indexPath, animated: false)
             return
         
-        if eventDelegate?.addEvent(newEvent: filteredEvents[indexPath.row]) ?? false {
-            navigationController?.popViewController(animated: false)
-            
-            return
+//        if eventDelegate?.addEvent(newEvent: filteredEvents[indexPath.row]) ?? false {
+//            navigationController?.popViewController(animated: false)
+//            return
+//        }
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        displayMessage(title: "Party Full", message: "Unable to add more members to party")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is EventsDetailsViewController
+        {
+            let ed = segue.destination as? EventsDetailsViewController
+            ed?.name = eventName
+            ed?.dateTime = eventDateTime
+            ed?.location = locName
+            ed?.noOfPlayers = NoOfPlayers
+            ed?.minNoOfPlayers = minNoOfPlayers
+            ed?.sportType = sportType
+            ed?.icon = icon
+            ed?.lat = lat
+            ed?.long = long
+//            ed?.icon = imageIcon
+//            ed?.pin = loco
         }
-        tableView.deselectRow(at: indexPath, animated: true)
-        displayMessage(title: "Party Full", message: "Unable to add more members to party")
     }
     
     

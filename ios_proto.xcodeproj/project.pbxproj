@@ -22,6 +22,7 @@
 		500F06A1256413D90029033E /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F06A0256413D90029033E /* Sports.swift */; };
 		50281E252551C00D006BE114 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50281E242551C00D006BE114 /* MapViewController.swift */; };
 		503DD51B256A6A57002CD9D6 /* AddSportEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503DD51A256A6A56002CD9D6 /* AddSportEventDelegate.swift */; };
+		503DD51F256A86E6002CD9D6 /* EventsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503DD51E256A86E5002CD9D6 /* EventsDetailsViewController.swift */; };
 		508C5D13256578EC00D2F5A5 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D12256578EC00D2F5A5 /* DatabaseProtocol.swift */; };
 		508C5D172565792B00D2F5A5 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D162565792B00D2F5A5 /* MulticastDelegate.swift */; };
 		508C5D1E256579A800D2F5A5 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D1D256579A800D2F5A5 /* FirebaseController.swift */; };
@@ -60,6 +61,7 @@
 		500F06A0256413D90029033E /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
 		50281E242551C00D006BE114 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		503DD51A256A6A56002CD9D6 /* AddSportEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSportEventDelegate.swift; sourceTree = "<group>"; };
+		503DD51E256A86E5002CD9D6 /* EventsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDetailsViewController.swift; sourceTree = "<group>"; };
 		508C5D12256578EC00D2F5A5 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		508C5D162565792B00D2F5A5 /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		508C5D1D256579A800D2F5A5 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				3E0537F825697AF300044B76 /* ChatMessagesViewController.swift */,
 				503DD51A256A6A56002CD9D6 /* AddSportEventDelegate.swift */,
 				3E00F511256A7818003A52E7 /* EventDayViewController.swift */,
+				503DD51E256A86E5002CD9D6 /* EventsDetailsViewController.swift */,
 			);
 			path = ios_proto;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				500F06A1256413D90029033E /* Sports.swift in Sources */,
 				3E0537D1256978F600044B76 /* Channel.swift in Sources */,
 				500F069D2564124D0029033E /* Events.swift in Sources */,
+				503DD51F256A86E6002CD9D6 /* EventsDetailsViewController.swift in Sources */,
 				3E531CBF2563A8260071E5C2 /* SignUpViewController.swift in Sources */,
 				50A210C82567C86F00FA663A /* AddEventDelegate.swift in Sources */,
 				508C5D172565792B00D2F5A5 /* MulticastDelegate.swift in Sources */,
