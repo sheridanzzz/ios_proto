@@ -66,6 +66,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
             // Team listener references heroes, so we need to
             // do it after we have parsed heroes.
             //self.setUpTeamListener()
+            self.setUpSportsListener()
         }
     }
     
@@ -119,7 +120,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     func parseEventsSnapshot(snapshot: QuerySnapshot) {
         snapshot.documentChanges.forEach { (change) in
             let eventID = change.document.documentID
-            print(eventID)
+            //print(eventID)
             
             var parsedEvent: Events?
             
@@ -181,6 +182,8 @@ class FirebaseController: NSObject, DatabaseProtocol {
             sport.id = sportID
             if change.type == .added {
                 sportList.append(sport)
+                print(sport.sportName)
+                print("bjhbhb")
             }
             else if change.type == .modified {
                 let index = getSportIndexByID(sportID)!

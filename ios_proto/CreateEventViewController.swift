@@ -46,10 +46,8 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
         self.sportPicker.dataSource = self
         self.sportPicker.delegate = self
         
-        for sport in allSports{
-            sportNames.append(sport.sportName ?? "")
-        }
-        pickerData = sportNames
+        
+        
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .dateAndTime
         eventDateTimeTextField.inputView = datePicker
@@ -126,10 +124,6 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
             _ = eventDateTimeTextField.text!
             let lati = lat
             let longi = long
-            
-            
-            
-            
             
             let _ = databaseController?.addEvent(eventName: newEventName, eventDateTime: dateMain!, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: "", status: "", minNumPlayers: Int(newMinPlayers) ?? 0)
             navigationController?.popViewController(animated: true)
@@ -227,6 +221,12 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
     
     func onSportListChange(change: DatabaseChange, sports: [Sports]) {
         allSports = sports
+        for sport in allSports{
+            sportNames.append(sport.sportName ?? "")
+        }
+        
+        pickerData = sportNames
+        
         print("asjsj")
         print(allSports.count)
     }
