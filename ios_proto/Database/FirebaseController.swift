@@ -160,7 +160,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
             }
         }
     }
-    
+    //
     func parseUsersSnapshot(snapshot: QuerySnapshot) {
         snapshot.documentChanges.forEach { (change) in
             let userID = change.document.documentID
