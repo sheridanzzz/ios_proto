@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E00F512256A7818003A52E7 /* EventDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00F511256A7818003A52E7 /* EventDayViewController.swift */; };
 		3E0537D1256978F600044B76 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0537D0256978F600044B76 /* Channel.swift */; };
 		3E0537D42569793C00044B76 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0537D32569793C00044B76 /* Sender.swift */; };
 		3E0537F325697A0B00044B76 /* ChannelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0537F225697A0B00044B76 /* ChannelMessage.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E00F511256A7818003A52E7 /* EventDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDayViewController.swift; sourceTree = "<group>"; };
 		3E0537D0256978F600044B76 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		3E0537D32569793C00044B76 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 		3E0537F225697A0B00044B76 /* ChannelMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelMessage.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				3E0537F525697AC300044B76 /* ChannelsTableViewController.swift */,
 				3E0537F825697AF300044B76 /* ChatMessagesViewController.swift */,
 				503DD51A256A6A56002CD9D6 /* AddSportEventDelegate.swift */,
+				3E00F511256A7818003A52E7 /* EventDayViewController.swift */,
 			);
 			path = ios_proto;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				50C25A1C253AF8AB00A03316 /* ViewController.swift in Sources */,
 				50E6ADDB2553D81100DD6C5D /* FacebookViewController.swift in Sources */,
 				50C25A18253AF8AB00A03316 /* AppDelegate.swift in Sources */,
+				3E00F512256A7818003A52E7 /* EventDayViewController.swift in Sources */,
 				3E0537F625697AC300044B76 /* ChannelsTableViewController.swift in Sources */,
 				508C5D1E256579A800D2F5A5 /* FirebaseController.swift in Sources */,
 				3E0537F325697A0B00044B76 /* ChannelMessage.swift in Sources */,
