@@ -8,19 +8,107 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseStorage
+import FirebaseFirestore
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var uuid_textField: UILabel!
+    @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var updateImage_button: UIButton!
+    var image: UIImage? = nil
+    var currentUserId: String? = nil
+    var db: Firestore?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        db = Firestore.firestore()
         // Do any additional setup after loading the view.
         Auth.auth().addStateDidChangeListener { (auth, user) in
             // ...
             self.uuid_textField.text = auth.currentUser?.uid
+            self.currentUserId = auth.currentUser?.uid
         }
         
+        self.db?.collection("users").whereField("uuid", isEqualTo: self.currentUserId).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                //print("HELLLLLLOOOOOOOO")
+                //print(querySnapshot!.documents[0].data())
+                for document in querySnapshot!.documents {
+                    let value = document.data()["profileImg"]
+                    let fileUrl = URL(string: value as! String)
+                    DispatchQueue.global().async { [weak self] in
+                        if let data = try? Data(contentsOf: fileUrl!) {
+                                    if let image = UIImage(data: data) {
+                                        DispatchQueue.main.async {
+                                            self?.profileImg.image = image
+                                        }
+                                    }
+                                }
+                            }
+                }
+            }
+        }
+        
+        profileImg.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
+        profileImg.addGestureRecognizer(tapGesture)
+        
+    }
+    
+    @IBAction func updateImage_btnPressed(_ sender: Any) {
+        guard let imageSelected = self.image else {
+            print("Avatar is nil")
+            return
+        }
+        
+        guard let imageData = imageSelected.jpegData(compressionQuality: 0.4) else {
+            return
+        }
+        
+        let storageRef = Storage.storage().reference(forURL: "gs://ios-project-56ff2.appspot.com")
+        let storageProfileRef = storageRef.child("profile").child(self.currentUserId!)
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpg"
+        storageProfileRef.putData(imageData, metadata: metadata, completion: { (StorageMetadata, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+                return
+            }
+            
+            storageProfileRef.downloadURL(completion: { (url, error) in
+                if let metaImageUrl = url?.absoluteString {
+                    print(metaImageUrl)
+                    //let db = Firestore.firestore()
+                    self.db?.collection("users").whereField("uuid", isEqualTo: self.currentUserId!).getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print("Error getting documents: \(err)")
+                        } else {
+                            //print("HELLLLLLOOOOOOOO")
+                            //print(querySnapshot!.documents[0].data())
+                            for document in querySnapshot!.documents {
+                                print("\(document.documentID) => \(document.data())")
+                                self.db?.collection("users").document(document.documentID).updateData(["profileImg" : metaImageUrl])
+                            }
+                        }
+                    }
+                    //print("UPDATING FIELDS")
+                    
+                        
+                }
+            })
+        })
+        
+    }
+    
+    @objc func presentPicker() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
     }
     
     @IBAction func logout_button(_ sender: Any) {
@@ -47,4 +135,20 @@ class SettingsViewController: UIViewController {
      }
      */
     
+}
+
+extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            image = imageSelected
+            profileImg.image = imageSelected
+        }
+        
+        if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            image = imageOriginal
+            profileImg.image = imageOriginal
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
 }

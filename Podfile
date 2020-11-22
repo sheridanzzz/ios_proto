@@ -13,11 +13,13 @@ target 'ios_proto' do
    pod 'Firebase/Core'
    pod 'Firebase/Auth'
    pod 'Firebase/Firestore'
+   pod 'Firebase/Storage'
    pod 'FirebaseFirestoreSwift'
    pod 'FacebookCore'
    pod 'FacebookLogin'
    pod 'FBSDKCoreKit'
    pod 'FBSDKLoginKit'
    pod 'MessageKit'
-   
+   
+
 end
