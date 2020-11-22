@@ -359,7 +359,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         }
         if let newSportRef = sportsRef?.document(sportID) {
             eventsRef?.document(eventID).updateData(
-                ["users" : FieldValue.arrayUnion([newSportRef])]
+                ["sport" : FieldValue.arrayUnion([newSportRef])]
             )
         }
         return true

@@ -8,9 +8,10 @@
 import UIKit
 import MapKit
 
-class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
-    
+class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, DatabaseListener{
+   
     weak var databaseController: DatabaseProtocol?
+    var listenerType: ListenerType = .all
     
     @IBOutlet weak var eventNameField: UITextField!
     @IBOutlet weak var locationNameTextField: UITextField!
@@ -25,15 +26,30 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
     var long = 0.0
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocationCoordinate2D?
-    var listenerType: ListenerType = .all
     
     
     private var datePicker: UIDatePicker?
+    
+    var selectedSport: String?
+    var sportText: String?
+    var pickerData: [String] = [String]()
+    var dateText: String?
+    var dateMain: Date?
+    
+    var allSports: [Sports] = []
+    var sportNames: [String] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.sportPicker.dataSource = self
+        self.sportPicker.delegate = self
+        
+        for sport in allSports{
+            sportNames.append(sport.sportName ?? "")
+        }
+        pickerData = sportNames
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .dateAndTime
         eventDateTimeTextField.inputView = datePicker
@@ -71,15 +87,30 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
         //dnjkwndejknjk
     }
     
-        @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer)
-        {
-            view.endEditing(true)
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        databaseController?.addListener(listener: self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        databaseController?.removeListener(listener: self)
+    }
+    
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer)
+    {
+        view.endEditing(true)
+    }
     
     @objc func dateChanged(datePicker: UIDatePicker){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         eventDateTimeTextField.text = dateFormatter.string(from: datePicker.date)
+        let strDate = dateFormatter.string(from: datePicker.date)
+        dateText = strDate
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateMain = datePicker.date
         view.endEditing(true)
         
     }
@@ -92,13 +123,16 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
             let newLocName = locationNameTextField.text!
             let newMinPlayers = minNumPlayersTextField.text!
             let newMaxPlayers = maxNumPlayersTextField.text!
-            let newEventDateTime = eventDateTimeTextField.text!
+            _ = eventDateTimeTextField.text!
             let lati = lat
             let longi = long
             
             
-//            let _ = databaseController?.addEvent(eventName: newEventName, eventDateTime: <#T##Date#>, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: "", status: "", minNumPlayers: Int(newMinPlayers) ?? 0)
-//            navigationController?.popViewController(animated: true)
+            
+            
+            
+            let _ = databaseController?.addEvent(eventName: newEventName, eventDateTime: dateMain!, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: "", status: "", minNumPlayers: Int(newMinPlayers) ?? 0)
+            navigationController?.popViewController(animated: true)
             return
         }
         
@@ -164,6 +198,37 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
             annotation.subtitle = ""
             self.mapView.addAnnotation(annotation)
         }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    // The data to return fopr the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    // Capture the picker view selection
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // This method is triggered whenever the user makes a change to the picker selection.
+        // The parameter named row and component represents what was selected.
+        selectedSport = pickerData[row]
+        sportText = selectedSport
+    }
+    
+    func onEventListChange(change: DatabaseChange, events: [Events]) {
+        //nothing
+    }
+    
+    func onSportListChange(change: DatabaseChange, sports: [Sports]) {
+        allSports = sports
+        print("asjsj")
+        print(allSports.count)
     }
 }
 
