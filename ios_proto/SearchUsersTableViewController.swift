@@ -1,23 +1,24 @@
 //
-//  EventTableViewController.swift
+//  SearchUsersTableViewController.swift
 //  ios_proto
 //
-//  Created by Sheridan's Lair on 20/11/20.
+//  Created by Sheridan's Lair on 23/11/20.
 //
 
 import UIKit
 
-class EventTableViewController: UITableViewController, DatabaseListener, UISearchResultsUpdating {
+class SearchUsersTableViewController: UITableViewController, DatabaseListener, UISearchResultsUpdating {
     
     
-    let CELL_EVENT = "eventCell"
+
+    let CELL_USER = "userCell"
     
-    var allEvents: [Events] = []
-    var filteredEvents: [Events] = []
-    weak var eventDelegate: AddEventDelegate?
+    var allUsers: [Users] = []
+    var filteredUsers: [Users] = []
+    //weak var userDelegate: AddEventDelegate?
     weak var databaseController: DatabaseProtocol?
     var listenerType: ListenerType = .all
-    var eventName: String = ""
+    var userName: String = ""
     var eventDateTime: String = ""
     var locName: String = ""
     var NoOfPlayers: String = ""
@@ -34,13 +35,13 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
         
-        filteredEvents = allEvents
+        filteredUsers = allUsers
         //print(allEvents)
         
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Events"
+        searchController.searchBar.placeholder = "Search Users"
         navigationItem.searchController = searchController
         
         // This view controller decides how the search controller is presented
@@ -65,11 +66,11 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         }
         print(searchText)
         if searchText.count > 0 {
-            filteredEvents = allEvents.filter({ (event: Events) -> Bool in
-                return event.eventName?.lowercased().contains(searchText) ?? false
+            filteredUsers = allUsers.filter({ (user: Users) -> Bool in
+                return user.firstName?.lowercased().contains(searchText) ?? false
             })
         } else {
-            filteredEvents = allEvents
+            filteredUsers = allUsers
         }
         
         tableView.reloadData()
@@ -82,75 +83,62 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
     }
     
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                return filteredEvents.count
+                return filteredUsers.count
         }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let eventCell = tableView.dequeueReusableCell(withIdentifier: CELL_EVENT,
-                                                      for: indexPath) as! EventTableViewCell
-        let event = filteredEvents[indexPath.row]
-        eventCell.eventNameLabel.text = event.eventName
-        return eventCell
-        
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_INFO, for: indexPath)
-        //        cell.textLabel?.text = "\(allHeroes.count) heroes in the database"
-        //        cell.textLabel?.textColor = .secondaryLabel
-        //        cell.selectionStyle = .none
-        //        return cell
+        let userCell = tableView.dequeueReusableCell(withIdentifier: CELL_USER,
+                                                      for: indexPath) as! SearchUserTableViewCell
+        let user = filteredUsers[indexPath.row]
+        print(user)
+        userCell.userNameLabel.text = user.firstName
+        return userCell
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd hh:mm:ss"
-        let event = filteredEvents[indexPath.row]
-        eventName = event.eventName ?? ""
-        eventDateTime = df.string(from: event.eventDateTime!)
-        locName = event.locationName ?? ""
-        NoOfPlayers = String(event.numberOfPlayers!)
-        minNoOfPlayers = String(event.minNumPlayers!)
-        sportType = event.sport ?? ""
-        icon = event.annotationImg ?? ""
-        lat = event.lat!
-        long = event.long!
-        
-        
-        self.performSegue(withIdentifier: "eventDetailsSegue", sender: self)
+//        let df = DateFormatter()
+//        df.dateFormat = "yyyy-MM-dd hh:mm:ss"
+//        let event = filteredEvents[indexPath.row]
+//        eventName = event.eventName ?? ""
+//        eventDateTime = df.string(from: event.eventDateTime!)
+//        locName = event.locationName ?? ""
+//        NoOfPlayers = String(event.numberOfPlayers!)
+//        minNoOfPlayers = String(event.minNumPlayers!)
+//        sportType = event.sport ?? ""
+//        icon = event.annotationImg ?? ""
+//        lat = event.lat!
+//        long = event.long!
+//
+//
+//        self.performSegue(withIdentifier: "eventDetailsSegue", sender: self)
             tableView.deselectRow(at: indexPath, animated: false)
             return
-        
-//        if eventDelegate?.addEvent(newEvent: filteredEvents[indexPath.row]) ?? false {
-//            navigationController?.popViewController(animated: false)
-//            return
-//        }
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        displayMessage(title: "Party Full", message: "Unable to add more members to party")
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if segue.destination is EventsDetailsViewController
-        {
-            let ed = segue.destination as? EventsDetailsViewController
-            ed?.name = eventName
-            ed?.dateTime = eventDateTime
-            ed?.location = locName
-            ed?.noOfPlayers = NoOfPlayers
-            ed?.minNoOfPlayers = minNoOfPlayers
-            ed?.sportType = sportType
-            ed?.icon = icon
-            ed?.lat = lat
-            ed?.long = long
-//            ed?.icon = imageIcon
-//            ed?.pin = loco
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+//    {
+//        if segue.destination is EventsDetailsViewController
+//        {
+//            let ed = segue.destination as? EventsDetailsViewController
+//            ed?.name = eventName
+//            ed?.dateTime = eventDateTime
+//            ed?.location = locName
+//            ed?.noOfPlayers = NoOfPlayers
+//            ed?.minNoOfPlayers = minNoOfPlayers
+//            ed?.sportType = sportType
+//            ed?.icon = icon
+//            ed?.lat = lat
+//            ed?.long = long
+////            ed?.icon = imageIcon
+////            ed?.pin = loco
+//        }
+//    }
     
     
     // MARK: - Database Listener
     func onEventListChange(change: DatabaseChange, events: [Events]) {
-        allEvents = events
-        updateSearchResults(for: navigationItem.searchController!)
+        //do nothing
     }
     
     func onSportListChange(change: DatabaseChange, sports: [Sports]) {
@@ -158,9 +146,10 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
     }
     
     func onUserListChange(change: DatabaseChange, users: [Users]) {
-        //do nothing
+        allUsers = users
+        print(allUsers.count)
+        updateSearchResults(for: navigationItem.searchController!)
     }
-    
     
     func displayMessage(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message,

@@ -14,7 +14,7 @@ class Users: Codable, Equatable {
     var LastName: String? = ""
     var gender: String? = ""
     var dateOfBirth: Date?
-    var address: String? = ""
+    //var address: String? = ""
     var state: String? = ""
     var postcode: Int?
     var registerationDate: Date?
@@ -28,7 +28,7 @@ class Users: Codable, Equatable {
         case LastName
         case gender
         case dateOfBirth
-        case address
+        //case address
         case state
         case postcode
         case registerationDate

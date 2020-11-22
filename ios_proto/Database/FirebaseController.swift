@@ -22,7 +22,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     var sportsRef: CollectionReference?
     var eventList: [Events]
     var sportList: [Sports]
-    var currentUser: Users
+    var userList: [Users]
     //     var heroList: [SuperHero]
     //     var defaultTeam: Team
     
@@ -35,7 +35,8 @@ class FirebaseController: NSObject, DatabaseProtocol {
         database = Firestore.firestore()
         eventList = [Events]()
         sportList = [Sports]()
-        currentUser = Users()
+        userList = [Users]()
+        //currentUser = Users()
         //     defaultTeam = Team()
         
         super.init()
@@ -81,40 +82,40 @@ class FirebaseController: NSObject, DatabaseProtocol {
             
             // Team listener references heroes, so we need to
             // do it after we have parsed heroes.
+            self.setUpUsersListener()
+        }
+    }
+    
+    func setUpUsersListener() {
+        usersRef = database.collection("users")
+        usersRef?.addSnapshotListener { (querySnapshot, error) in
+            guard let querySnapshot = querySnapshot else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            self.parseUsersSnapshot(snapshot: querySnapshot)
+
+            // Team listener references heroes, so we need to
+            // do it after we have parsed heroes.
             //self.setUpTeamListener()
         }
     }
     
-//    func setUpUsersListener() {
-//        usersRef = database.collection("sport")
-//        usersRef?.addSnapshotListener { (querySnapshot, error) in
-//            guard let querySnapshot = querySnapshot else {
-//                print("Error fetching documents: \(error!)")
-//                return
-//            }
-//            self.parseEventsSnapshot(snapshot: querySnapshot)
-//
-//            // Team listener references heroes, so we need to
-//            // do it after we have parsed heroes.
-//            //self.setUpTeamListener()
-//        }
-//    }
-    
     //change the way user is found
     //fix this
     
-        func setUpUsersListener() {
-            usersRef = database.collection("users")
-            usersRef?.whereField("uuid", isEqualTo: DEFAULT_USER_NAME).addSnapshotListener {
-         (querySnapshot, error) in
-         guard let querySnapshot = querySnapshot,
-         let userSnapshot = querySnapshot.documents.first else {
-         print("Error fetching teams: \(error!)")
-         return
-         }
-         //self.parseUserSnapshot(snapshot: userSnapshot)
-         }
-         }
+//        func setUpUsersListener() {
+//            usersRef = database.collection("users")
+//            usersRef?.whereField("uuid", isEqualTo: DEFAULT_USER_NAME).addSnapshotListener {
+//         (querySnapshot, error) in
+//         guard let querySnapshot = querySnapshot,
+//         let userSnapshot = querySnapshot.documents.first else {
+//         print("Error fetching teams: \(error!)")
+//         return
+//         }
+//         //self.parseUserSnapshot(snapshot: userSnapshot)
+//         }
+//         }
     
     // MARK:- Parse Functions for Firebase Firestore responses
     func parseEventsSnapshot(snapshot: QuerySnapshot) {
@@ -160,6 +161,48 @@ class FirebaseController: NSObject, DatabaseProtocol {
         }
     }
     
+    func parseUsersSnapshot(snapshot: QuerySnapshot) {
+        snapshot.documentChanges.forEach { (change) in
+            let userID = change.document.documentID
+            //print(eventID)
+            
+            var parsedUser: Users?
+            
+            do {
+                parsedUser = try change.document.data(as: Users.self)
+            } catch {
+                print("Unable to decode hero. Is the hero malformed?")
+                return
+            }
+            
+            guard let user = parsedUser else {
+                print("Document doesn't exist")
+                return;
+            }
+            
+            user.id = userID
+            if change.type == .added {
+                userList.append(user)
+            }
+            else if change.type == .modified {
+                let index = getUserIndexByID(userID)!
+                userList[index] = user
+            }
+            else if change.type == .removed {
+                if let index = getUserIndexByID(userID) {
+                    userList.remove(at: index)
+                }
+            }
+        }
+        
+        listeners.invoke { (listener) in
+            if listener.listenerType == ListenerType.events ||
+                listener.listenerType == ListenerType.all {
+                listener.onEventListChange(change: .update, events: eventList)
+            }
+        }
+    }
+    
     func parseSportsSnapshot(snapshot: QuerySnapshot) {
         snapshot.documentChanges.forEach { (change) in
             let sportID = change.document.documentID
@@ -182,8 +225,6 @@ class FirebaseController: NSObject, DatabaseProtocol {
             sport.id = sportID
             if change.type == .added {
                 sportList.append(sport)
-                print(sport.sportName)
-                print("bjhbhb")
             }
             else if change.type == .modified {
                 let index = getSportIndexByID(sportID)!
@@ -256,6 +297,23 @@ class FirebaseController: NSObject, DatabaseProtocol {
         for sport in sportList {
             if sport.id == id {
                 return sport
+            }
+        }
+        return nil
+    }
+    
+    func getUserIndexByID(_ id: String) -> Int? {
+        if let user = getUserByID(id) {
+            return userList.firstIndex(of: user)
+        }
+        
+        return nil
+    }
+    
+    func getUserByID(_ id: String) -> Users? {
+        for user in userList {
+            if user.id == id {
+                return user
             }
         }
         return nil
@@ -369,13 +427,13 @@ class FirebaseController: NSObject, DatabaseProtocol {
     }
     
     
-    func addUser(firstName: String, LastName: String, gender: String, dateOfBirth: Date, address: String, state: String, postcode: Int, registerationDate: Date, profileImg: String, uuid: String) -> Users {
+    func addUser(firstName: String, LastName: String, gender: String, dateOfBirth: Date, state: String, postcode: Int, registerationDate: Date, profileImg: String, uuid: String) -> Users {
         let user = Users()
         user.firstName = firstName
         user.LastName = LastName
         user.gender = gender
         user.dateOfBirth = dateOfBirth
-        user.address = address
+        //user.address = address
         user.state = state
         user.postcode = postcode
         user.registerationDate = registerationDate
@@ -453,10 +511,10 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     func addListener(listener: DatabaseListener) {
         listeners.addDelegate(listener)
-//        if listener.listenerType == ListenerType.user ||
-//            listener.listenerType == ListenerType.all {
-//            listener.onTeamChange(change: .update, teamHeroes: defaultTeam.heroes)
-//        }
+        if listener.listenerType == ListenerType.users ||
+            listener.listenerType == ListenerType.all {
+            listener.onUserListChange(change: .update, users: userList)
+        }
         
         if listener.listenerType == ListenerType.events ||
             listener.listenerType == ListenerType.all {

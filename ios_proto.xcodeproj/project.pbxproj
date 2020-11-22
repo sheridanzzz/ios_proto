@@ -23,6 +23,8 @@
 		50281E252551C00D006BE114 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50281E242551C00D006BE114 /* MapViewController.swift */; };
 		503DD51B256A6A57002CD9D6 /* AddSportEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503DD51A256A6A56002CD9D6 /* AddSportEventDelegate.swift */; };
 		503DD51F256A86E6002CD9D6 /* EventsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503DD51E256A86E5002CD9D6 /* EventsDetailsViewController.swift */; };
+		50412085256AAE9F00B92667 /* SearchUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50412084256AAE9F00B92667 /* SearchUsersTableViewController.swift */; };
+		504120A7256AAECA00B92667 /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504120A6256AAECA00B92667 /* SearchUserTableViewCell.swift */; };
 		508C5D13256578EC00D2F5A5 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D12256578EC00D2F5A5 /* DatabaseProtocol.swift */; };
 		508C5D172565792B00D2F5A5 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D162565792B00D2F5A5 /* MulticastDelegate.swift */; };
 		508C5D1E256579A800D2F5A5 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D1D256579A800D2F5A5 /* FirebaseController.swift */; };
@@ -62,6 +64,8 @@
 		50281E242551C00D006BE114 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		503DD51A256A6A56002CD9D6 /* AddSportEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSportEventDelegate.swift; sourceTree = "<group>"; };
 		503DD51E256A86E5002CD9D6 /* EventsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDetailsViewController.swift; sourceTree = "<group>"; };
+		50412084256AAE9F00B92667 /* SearchUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersTableViewController.swift; sourceTree = "<group>"; };
+		504120A6256AAECA00B92667 /* SearchUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserTableViewCell.swift; sourceTree = "<group>"; };
 		508C5D12256578EC00D2F5A5 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		508C5D162565792B00D2F5A5 /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		508C5D1D256579A800D2F5A5 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				503DD51A256A6A56002CD9D6 /* AddSportEventDelegate.swift */,
 				3E00F511256A7818003A52E7 /* EventDayViewController.swift */,
 				503DD51E256A86E5002CD9D6 /* EventsDetailsViewController.swift */,
+				50412084256AAE9F00B92667 /* SearchUsersTableViewController.swift */,
+				504120A6256AAECA00B92667 /* SearchUserTableViewCell.swift */,
 			);
 			path = ios_proto;
 			sourceTree = "<group>";
@@ -315,6 +321,8 @@
 				3E00F512256A7818003A52E7 /* EventDayViewController.swift in Sources */,
 				3E0537F625697AC300044B76 /* ChannelsTableViewController.swift in Sources */,
 				508C5D1E256579A800D2F5A5 /* FirebaseController.swift in Sources */,
+				50412085256AAE9F00B92667 /* SearchUsersTableViewController.swift in Sources */,
+				504120A7256AAECA00B92667 /* SearchUserTableViewCell.swift in Sources */,
 				3E0537F325697A0B00044B76 /* ChannelMessage.swift in Sources */,
 				50E6ADD52553D78300DD6C5D /* RegisterViewController.swift in Sources */,
 				50A210C22567C4C500FA663A /* EventTableViewController.swift in Sources */,

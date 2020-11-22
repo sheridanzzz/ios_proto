@@ -10,6 +10,8 @@ import MapKit
 
 
 class MapViewController: UIViewController, MKMapViewDelegate, DatabaseListener {
+   
+    
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -81,6 +83,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, DatabaseListener {
         //do nothing
     }
     
+    func onUserListChange(change: DatabaseChange, users: [Users]) {
+        //do nothing
+    }
 
     //zoom in on the map
     func focusOn(annotation: MKAnnotation) {

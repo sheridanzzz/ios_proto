@@ -10,6 +10,8 @@ import MapKit
 
 class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, DatabaseListener{
    
+    
+   
     weak var databaseController: DatabaseProtocol?
     var listenerType: ListenerType = .all
     
@@ -245,6 +247,10 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
     
     func onEventListChange(change: DatabaseChange, events: [Events]) {
         //nothing
+    }
+    
+    func onUserListChange(change: DatabaseChange, users: [Users]) {
+        //do nothing
     }
     
     func onSportListChange(change: DatabaseChange, sports: [Sports]) {
