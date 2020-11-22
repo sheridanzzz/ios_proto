@@ -35,9 +35,11 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
     var pickerData: [String] = [String]()
     var dateText: String?
     var dateMain: Date?
-    
+    var newEvent: Events?
+    var pickedSport: Sports?
     var allSports: [Sports] = []
     var sportNames: [String] = []
+    var eventImageURL: String?
     
     
     override func viewDidLoad() {
@@ -116,7 +118,8 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
     
     @IBAction func createEvent(_ sender: Any) {
         
-        if eventNameField.text != "" && locationNameTextField.text != "" && maxNumPlayersTextField.text != "" && minNumPlayersTextField.text != "" && eventDateTimeTextField.text != "" && long != 0.0 && lat != 0.0 {
+
+        if eventNameField.text != "" && locationNameTextField.text != "" && maxNumPlayersTextField.text != "" && minNumPlayersTextField.text != "" && eventDateTimeTextField.text != "" && long != 0.0 && lat != 0.0 && sportText != ""{
             let newEventName = eventNameField.text!
             let newLocName = locationNameTextField.text!
             let newMinPlayers = minNumPlayersTextField.text!
@@ -125,7 +128,21 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
             let lati = lat
             let longi = long
             
-            let _ = databaseController?.addEvent(eventName: newEventName, eventDateTime: dateMain!, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: "", status: "", minNumPlayers: Int(newMinPlayers) ?? 0)
+//            newEvent?.eventName = newEventName
+//            newEvent?.locationName = newLocName
+//            newEvent?.minNumPlayers = Int(newMinPlayers)
+//            newEvent?.numberOfPlayers = Int(newMaxPlayers)
+//            newEvent?.eventDateTime = dateMain
+//            newEvent?.lat = Double(lati)
+//            newEvent?.long = Double(longi)
+//            newEvent?.annotationImg = eventImageURL
+//            newEvent?.status = "on"
+            
+            
+            let _ = databaseController?.addEvent(eventName: newEventName, eventDateTime: dateMain!, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: eventImageURL ?? "on" , status: "", minNumPlayers: Int(newMinPlayers) ?? 0)
+            
+            //let _ = databaseController?.addSportToEvent(sport: pickedSport!, event: newEvent!)
+            
             navigationController?.popViewController(animated: true)
             return
         }
@@ -148,6 +165,14 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
         
         if eventDateTimeTextField.text == "" {
             errorMsg += "- Must provide event date and time"
+        }
+        
+        if long == 0.0 {
+            errorMsg += "- Must provide location\n"
+        }
+        
+        if sportText == "" {
+            errorMsg += "- Must select a sport\n"
         }
         
         displayMessage(title: "Not all fields filled", message: errorMsg)
@@ -214,6 +239,8 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
         selectedSport = pickerData[row]
         sportText = selectedSport
         
+        pickedSport = allSports[row];
+        eventImageURL = pickedSport?.sportsImg;
     }
     
     func onEventListChange(change: DatabaseChange, events: [Events]) {

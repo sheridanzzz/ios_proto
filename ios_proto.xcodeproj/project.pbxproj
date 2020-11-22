@@ -20,6 +20,7 @@
 		500F069D2564124D0029033E /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F069C2564124D0029033E /* Events.swift */; };
 		500F06A1256413D90029033E /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F06A0256413D90029033E /* Sports.swift */; };
 		50281E252551C00D006BE114 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50281E242551C00D006BE114 /* MapViewController.swift */; };
+		503DD51B256A6A57002CD9D6 /* AddSportEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503DD51A256A6A56002CD9D6 /* AddSportEventDelegate.swift */; };
 		508C5D13256578EC00D2F5A5 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D12256578EC00D2F5A5 /* DatabaseProtocol.swift */; };
 		508C5D172565792B00D2F5A5 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D162565792B00D2F5A5 /* MulticastDelegate.swift */; };
 		508C5D1E256579A800D2F5A5 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C5D1D256579A800D2F5A5 /* FirebaseController.swift */; };
@@ -56,6 +57,7 @@
 		500F069C2564124D0029033E /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		500F06A0256413D90029033E /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
 		50281E242551C00D006BE114 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		503DD51A256A6A56002CD9D6 /* AddSportEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSportEventDelegate.swift; sourceTree = "<group>"; };
 		508C5D12256578EC00D2F5A5 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		508C5D162565792B00D2F5A5 /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		508C5D1D256579A800D2F5A5 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				3E0537F225697A0B00044B76 /* ChannelMessage.swift */,
 				3E0537F525697AC300044B76 /* ChannelsTableViewController.swift */,
 				3E0537F825697AF300044B76 /* ChatMessagesViewController.swift */,
+				503DD51A256A6A56002CD9D6 /* AddSportEventDelegate.swift */,
 			);
 			path = ios_proto;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				3E0537F325697A0B00044B76 /* ChannelMessage.swift in Sources */,
 				50E6ADD52553D78300DD6C5D /* RegisterViewController.swift in Sources */,
 				50A210C22567C4C500FA663A /* EventTableViewController.swift in Sources */,
+				503DD51B256A6A57002CD9D6 /* AddSportEventDelegate.swift in Sources */,
 				50A210C52567C5D900FA663A /* EventTableViewCell.swift in Sources */,
 				3EB71E462567FB8E0020EDD6 /* SettingsViewController.swift in Sources */,
 				5094B0672553395E003849BC /* KolodaViewController.swift in Sources */,
