@@ -34,7 +34,7 @@ protocol DatabaseProtocol: AnyObject {
     
     func cleanup()
     func addUser(firstName: String, LastName: String, gender: String, dateOfBirth: Date, address: String, state: String, postcode: Int, registerationDate: Date, profileImg: String, uuid: String) -> Users
-    func addEvent(eventName: String, eventDateTime: Date, numberOfPlayers: Int, locationName: String, long: Double, lat: Double, annotationImg: String, status: String, minNumPlayers: Int) -> Events
+    func addEvent(eventName: String, eventDateTime: Date, numberOfPlayers: Int, locationName: String, long: Double, lat: Double, annotationImg: String, status: String, minNumPlayers: Int, sport: String) -> Events
     func addSport(sportName: String, sportsImg: String) -> Sports
     func addSportToUser(sport: Sports, user: Users) -> Bool
     func addEventToUser(event: Events, user: Users) -> Bool

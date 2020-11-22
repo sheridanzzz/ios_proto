@@ -139,7 +139,7 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
 //            newEvent?.status = "on"
             
             
-            let _ = databaseController?.addEvent(eventName: newEventName, eventDateTime: dateMain!, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: eventImageURL ?? "on" , status: "", minNumPlayers: Int(newMinPlayers) ?? 0)
+            let _ = databaseController?.addEvent(eventName: newEventName, eventDateTime: dateMain!, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: eventImageURL ?? "on" , status: "ON", minNumPlayers: Int(newMinPlayers) ?? 0, sport: sportText ?? "")
             
             //let _ = databaseController?.addSportToEvent(sport: pickedSport!, event: newEvent!)
             
