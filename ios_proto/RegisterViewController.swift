@@ -70,7 +70,7 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                     // after login is done, maybe put this in the login web service completion block
                     
                     let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName, "gender":self.gender_text, "state":state, "postcode":postcode, "uuid":authResult?.user.uid, "dateOfBirth":self.dateText, "profileImg": "",  "registerationDate":dateFormatter.string(from: date)]) { (error) in
+                    db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName, "gender":self.gender_text, "state":state, "postcode":Int(postcode), "uuid":authResult?.user.uid, "dateOfBirth":self.dateText, "profileImg": "",  "registerationDate":dateFormatter.string(from: date)]) { (error) in
                         
                         if error != nil {
                             //show error message
