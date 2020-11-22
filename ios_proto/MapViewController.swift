@@ -28,6 +28,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, DatabaseListener {
     //var fliteredEvents: based on swiped sports
     //kfnwfcwe
     //cecerce
+    //kdnewkdnwkjnde
+    //swwswwsswww
     var eventsList = [LocationAnnotation]()
    
     
