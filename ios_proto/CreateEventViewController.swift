@@ -213,6 +213,7 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
         // The parameter named row and component represents what was selected.
         selectedSport = pickerData[row]
         sportText = selectedSport
+        
     }
     
     func onEventListChange(change: DatabaseChange, events: [Events]) {
@@ -224,11 +225,7 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
         for sport in allSports{
             sportNames.append(sport.sportName ?? "")
         }
-        
         pickerData = sportNames
-        
-        print("asjsj")
-        print(allSports.count)
     }
 }
 
