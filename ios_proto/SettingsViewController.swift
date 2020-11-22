@@ -10,6 +10,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseFirestore
+import Kingfisher
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var uuid_textField: UILabel!
@@ -36,17 +37,12 @@ class SettingsViewController: UIViewController {
                 //print("HELLLLLLOOOOOOOO")
                 //print(querySnapshot!.documents[0].data())
                 for document in querySnapshot!.documents {
+                    
                     let value = document.data()["profileImg"]
-                    let fileUrl = URL(string: value as! String)
-                    DispatchQueue.global().async { [weak self] in
-                        if let data = try? Data(contentsOf: fileUrl!) {
-                                    if let image = UIImage(data: data) {
-                                        DispatchQueue.main.async {
-                                            self?.profileImg.image = image
-                                        }
-                                    }
-                                }
-                            }
+                    print("HELLLLLLOOOOOOOO")
+                    print(value)
+                    let url = URL(string: value as! String)
+                    self.profileImg.kf.setImage(with: url)
                 }
             }
         }
