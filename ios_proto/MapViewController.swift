@@ -26,6 +26,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, DatabaseListener {
     weak var databaseController: DatabaseProtocol?
     var allEvents: [Events] = []
     //var fliteredEvents: based on swiped sports
+    //kfnwfcwe
+    //cecerce
     var eventsList = [LocationAnnotation]()
    
     
