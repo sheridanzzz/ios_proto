@@ -20,6 +20,5 @@ target 'ios_proto' do
    pod 'FBSDKCoreKit'
    pod 'FBSDKLoginKit'
    pod 'MessageKit'
-   
-
+   pod 'Kingfisher'
 end
