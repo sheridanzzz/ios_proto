@@ -322,7 +322,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     func cleanup() {
         
     }
-    
+    //djnsjknd
     //    func addTeam(teamName: String) -> Team {
     //    let team = Team()
     //        team.name = teamName
