@@ -44,7 +44,6 @@ class EventsDetailsViewController: UIViewController, CLLocationManagerDelegate, 
         minNumberOfPlayersLabel.text = "Min Number of Players:" + " " + minNoOfPlayers
         sportTypeLabel.text = "Sport Type:" + " " + sportType
         
-        print(icon)
         eventImageView.downloaded(from: icon)
         
         mapView.delegate = self

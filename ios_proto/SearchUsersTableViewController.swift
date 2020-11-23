@@ -28,6 +28,14 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
     var lat: Double = 0.0
     var long: Double = 0.0
     
+    var firstName: String = ""
+    var lastName: String = ""
+    var dob: String = ""
+    var state: String = ""
+    var gender: String = ""
+    var profilePic: String = ""
+    var postcode: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,43 +111,34 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let df = DateFormatter()
-//        df.dateFormat = "yyyy-MM-dd hh:mm:ss"
-//        let event = filteredEvents[indexPath.row]
-//        eventName = event.eventName ?? ""
-//        eventDateTime = df.string(from: event.eventDateTime!)
-//        locName = event.locationName ?? ""
-//        NoOfPlayers = String(event.numberOfPlayers!)
-//        minNoOfPlayers = String(event.minNumPlayers!)
-//        sportType = event.sport ?? ""
-//        icon = event.annotationImg ?? ""
-//        lat = event.lat!
-//        long = event.long!
-//
-//
-//        self.performSegue(withIdentifier: "eventDetailsSegue", sender: self)
+        
+        let user = filteredUsers[indexPath.row]
+        firstName = user.firstName ?? ""
+        lastName = user.lastName ?? ""
+        gender = user.gender ?? ""
+        dob = user.dateOfBirth ?? ""
+        postcode = user.postcode ?? 0
+        profilePic = user.profileImg ?? ""
+        state = user.state ?? ""
+        
+        self.performSegue(withIdentifier: "userDetailsSegue", sender: self)
             tableView.deselectRow(at: indexPath, animated: false)
             return
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-//    {
-//        if segue.destination is EventsDetailsViewController
-//        {
-//            let ed = segue.destination as? EventsDetailsViewController
-//            ed?.name = eventName
-//            ed?.dateTime = eventDateTime
-//            ed?.location = locName
-//            ed?.noOfPlayers = NoOfPlayers
-//            ed?.minNoOfPlayers = minNoOfPlayers
-//            ed?.sportType = sportType
-//            ed?.icon = icon
-//            ed?.lat = lat
-//            ed?.long = long
-////            ed?.icon = imageIcon
-////            ed?.pin = loco
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is UserDetailsViewController
+        {
+            let ed = segue.destination as? UserDetailsViewController
+            ed?.firstName = firstName
+            ed?.lastName = lastName
+            ed?.gender = gender
+            ed?.dob = dob
+            ed?.profilePic = profilePic
+            ed?.state = state
+        }
+    }
     
     
     // MARK: - Database Listener
