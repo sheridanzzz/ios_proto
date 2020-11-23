@@ -406,6 +406,34 @@
                                 </state>
                                 <connections>
                                     <action selector="startEventBtn:" destination="ZbS-An-ZZT" eventType="touchUpInside" id="Icg-Xx-ZyT"/>
+                                    <segue destination="c2s-v9-xv5" kind="show" id="Iyt-nQ-Wxh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTx-Tl-TNF">
+                                <rect key="frame" x="10" y="554" width="355" height="30"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Going">
+                                    <color key="titleColor" systemColor="systemGreenColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="going_EventBtn:" destination="ZbS-An-ZZT" eventType="touchUpInside" id="FBS-cp-ZZD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are going to this event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ew-1i-FXx">
+                                <rect key="frame" x="10" y="594" width="355" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcI-Da-fYK">
+                                <rect key="frame" x="10" y="620" width="355" height="30"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Attend Event">
+                                    <color key="titleColor" name="incomingMessageLabel"/>
+                                </state>
+                                <connections>
+                                    <action selector="attendEvent_button:" destination="ZbS-An-ZZT" eventType="touchUpInside" id="5GC-AT-DPr"/>
+                                    <segue destination="c2s-v9-xv5" kind="show" id="kTA-04-ISc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -413,13 +441,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ILp-xr-XzT" firstAttribute="top" secondItem="QxV-5H-9n2" secondAttribute="bottom" constant="10" id="0KG-67-ZZ5"/>
+                            <constraint firstItem="YcI-Da-fYK" firstAttribute="top" secondItem="5Ew-1i-FXx" secondAttribute="bottom" constant="5" id="0qS-1r-awg"/>
                             <constraint firstItem="RWf-EZ-t1e" firstAttribute="top" secondItem="eTJ-Ez-f8K" secondAttribute="bottom" constant="20" id="3Mw-TQ-PFp"/>
                             <constraint firstItem="31S-tw-zTZ" firstAttribute="trailing" secondItem="QxV-5H-9n2" secondAttribute="trailing" constant="10" id="52t-dA-kaV"/>
+                            <constraint firstItem="31S-tw-zTZ" firstAttribute="trailing" secondItem="YcI-Da-fYK" secondAttribute="trailing" constant="10" id="6Xw-9s-ftf"/>
+                            <constraint firstItem="31S-tw-zTZ" firstAttribute="trailing" secondItem="FTx-Tl-TNF" secondAttribute="trailing" constant="10" id="82s-du-dxL"/>
                             <constraint firstItem="31S-tw-zTZ" firstAttribute="trailing" secondItem="wtc-Qr-Ag2" secondAttribute="trailing" constant="100" id="9gA-6K-LoV"/>
                             <constraint firstItem="tY8-79-5P8" firstAttribute="top" secondItem="1od-yf-Y6P" secondAttribute="bottom" constant="10" id="Ago-a9-lWV"/>
                             <constraint firstItem="31S-tw-zTZ" firstAttribute="trailing" secondItem="tY8-79-5P8" secondAttribute="trailing" constant="10" id="DKx-Rr-IHx"/>
                             <constraint firstItem="1od-yf-Y6P" firstAttribute="leading" secondItem="31S-tw-zTZ" secondAttribute="leading" constant="10" id="Ddc-98-8b4"/>
+                            <constraint firstItem="31S-tw-zTZ" firstAttribute="trailing" secondItem="5Ew-1i-FXx" secondAttribute="trailing" constant="10" id="Des-xA-P3z"/>
                             <constraint firstItem="wtc-Qr-Ag2" firstAttribute="top" secondItem="JzD-0e-uad" secondAttribute="bottom" constant="10" id="FDd-1B-xqM"/>
+                            <constraint firstItem="5Ew-1i-FXx" firstAttribute="top" secondItem="FTx-Tl-TNF" secondAttribute="bottom" constant="10" id="KPX-JB-06Y"/>
                             <constraint firstItem="31S-tw-zTZ" firstAttribute="trailing" secondItem="RWf-EZ-t1e" secondAttribute="trailing" constant="10" id="LAg-cH-O0s"/>
                             <constraint firstItem="eTJ-Ez-f8K" firstAttribute="top" secondItem="r95-xA-CFE" secondAttribute="bottom" constant="10" id="Lem-UQ-cHj"/>
                             <constraint firstItem="1od-yf-Y6P" firstAttribute="top" secondItem="wtc-Qr-Ag2" secondAttribute="bottom" constant="10" id="Lvc-pI-PoY"/>
@@ -432,9 +465,13 @@
                             <constraint firstItem="r95-xA-CFE" firstAttribute="leading" secondItem="31S-tw-zTZ" secondAttribute="leading" constant="10" id="aCt-KB-lEi"/>
                             <constraint firstItem="JzD-0e-uad" firstAttribute="leading" secondItem="31S-tw-zTZ" secondAttribute="leading" constant="10" id="aml-O0-EnQ"/>
                             <constraint firstItem="wtc-Qr-Ag2" firstAttribute="leading" secondItem="31S-tw-zTZ" secondAttribute="leading" constant="100" id="dGZ-qN-hAc"/>
+                            <constraint firstItem="YcI-Da-fYK" firstAttribute="leading" secondItem="31S-tw-zTZ" secondAttribute="leading" constant="10" id="fbb-Mf-w0b"/>
+                            <constraint firstItem="5Ew-1i-FXx" firstAttribute="leading" secondItem="31S-tw-zTZ" secondAttribute="leading" constant="10" id="gdg-Eb-4jH"/>
                             <constraint firstItem="eTJ-Ez-f8K" firstAttribute="leading" secondItem="31S-tw-zTZ" secondAttribute="leading" constant="10" id="mdT-Bh-h3N"/>
                             <constraint firstItem="31S-tw-zTZ" firstAttribute="trailing" secondItem="ILp-xr-XzT" secondAttribute="trailing" constant="10" id="np7-ee-T5K"/>
+                            <constraint firstItem="FTx-Tl-TNF" firstAttribute="top" secondItem="RWf-EZ-t1e" secondAttribute="bottom" constant="20" id="ped-A5-92Z"/>
                             <constraint firstItem="JzD-0e-uad" firstAttribute="top" secondItem="31S-tw-zTZ" secondAttribute="top" constant="10" id="sA3-xd-bc3"/>
+                            <constraint firstItem="FTx-Tl-TNF" firstAttribute="leading" secondItem="31S-tw-zTZ" secondAttribute="leading" constant="10" id="t2b-Gi-1uB"/>
                             <constraint firstItem="RWf-EZ-t1e" firstAttribute="leading" secondItem="31S-tw-zTZ" secondAttribute="leading" constant="10" id="uGQ-ou-2bU"/>
                             <constraint firstItem="31S-tw-zTZ" firstAttribute="trailing" secondItem="eTJ-Ez-f8K" secondAttribute="trailing" constant="10" id="vb1-Ea-yHU"/>
                             <constraint firstItem="31S-tw-zTZ" firstAttribute="trailing" secondItem="1od-yf-Y6P" secondAttribute="trailing" constant="10" id="woB-nk-tlv"/>
@@ -443,14 +480,18 @@
                     </view>
                     <navigationItem key="navigationItem" title="Event Details" id="YzC-et-iVW"/>
                     <connections>
+                        <outlet property="attend_button" destination="YcI-Da-fYK" id="Lal-ir-xtF"/>
                         <outlet property="eventDateTimeLabel" destination="1od-yf-Y6P" id="B0z-eg-cDD"/>
                         <outlet property="eventImageView" destination="wtc-Qr-Ag2" id="eir-ZG-XnQ"/>
                         <outlet property="eventNameLabel" destination="JzD-0e-uad" id="gGa-JS-Rt9"/>
+                        <outlet property="goingEvent_label" destination="5Ew-1i-FXx" id="x4b-75-gMJ"/>
+                        <outlet property="going_button" destination="FTx-Tl-TNF" id="Rc4-K5-7Fn"/>
                         <outlet property="locationNameLabel" destination="QxV-5H-9n2" id="5Ig-LI-KAu"/>
                         <outlet property="mapView" destination="tY8-79-5P8" id="9Aw-10-CbN"/>
                         <outlet property="minNumberOfPlayersLabel" destination="r95-xA-CFE" id="MKa-Em-V6J"/>
                         <outlet property="numberOfPlayersLabel" destination="ILp-xr-XzT" id="6lI-9W-H8l"/>
                         <outlet property="sportTypeLabel" destination="eTJ-Ez-f8K" id="KhZ-0f-9yh"/>
+                        <outlet property="startEvent_button" destination="RWf-EZ-t1e" id="Dre-hn-z1d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="825-43-if7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -948,9 +989,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzV-0R-rqm">
                                 <rect key="frame" x="10" y="528" width="355" height="30"/>
                                 <state key="normal" title="Go to video"/>
-                                <connections>
-                                    <segue destination="c2s-v9-xv5" kind="show" id="d0c-t8-9lg"/>
-                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.fill.badge.exclamationmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b7U-Xw-6sP">
                                 <rect key="frame" x="10" y="54" width="355" height="129.5"/>
@@ -1571,7 +1609,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="d0c-t8-9lg"/>
+        <segue reference="kTA-04-ISc"/>
         <segue reference="kwi-aE-Jxd"/>
         <segue reference="2q2-DP-Gim"/>
     </inferredMetricsTieBreakers>
@@ -1586,6 +1624,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="incomingMessageLabel">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -1594,6 +1635,12 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
