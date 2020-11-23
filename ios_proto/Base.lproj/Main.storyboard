@@ -945,7 +945,7 @@
             </objects>
             <point key="canvasLocation" x="2596" y="1126"/>
         </scene>
-        <!--Settings-->
+        <!--Profile-->
         <scene sceneID="Jf2-RR-UVD">
             <objects>
                 <viewController id="HOH-eq-LZa" customClass="SettingsViewController" customModule="ios_proto" customModuleProvider="target" sceneMemberID="viewController">
@@ -1016,7 +1016,7 @@
                             <constraint firstItem="Tge-PY-EwX" firstAttribute="top" secondItem="ctX-cj-lOS" secondAttribute="top" constant="10" id="zwO-Gc-8Zj"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.2.fill" catalog="system" id="tun-fc-AFH"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle.fill" catalog="system" id="tun-fc-AFH"/>
                     <connections>
                         <outlet property="profileImg" destination="b7U-Xw-6sP" id="Uga-dE-g0R"/>
                         <outlet property="updateImage_button" destination="Vb9-TA-Hsc" id="uj5-yN-sE1"/>
@@ -1730,10 +1730,10 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="basketball" width="300" height="300"/>
-        <image name="gearshape.2.fill" catalog="system" width="128" height="100"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.fill.badge.exclamationmark" catalog="system" width="128" height="113"/>
         <image name="star.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
