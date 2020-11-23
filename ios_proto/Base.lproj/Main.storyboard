@@ -18,52 +18,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CWa-Qh-EjL">
-                                <rect key="frame" x="0.0" y="44" width="162" height="128"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="128"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m10-9b-Mh1">
                                 <rect key="frame" x="50" y="122" width="275" height="128"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gw2-di-Izv">
-                                <rect key="frame" x="20" y="273" width="122" height="21"/>
+                                <rect key="frame" x="20" y="273" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plX-Qr-Bdw">
-                                <rect key="frame" x="20" y="323" width="122" height="21"/>
+                                <rect key="frame" x="20" y="323" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myx-OG-Ie4">
-                                <rect key="frame" x="50" y="369" width="62" height="30"/>
+                                <rect key="frame" x="50" y="369" width="275" height="30"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <state key="normal" title="Invite">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OR-4v-MGC">
-                                <rect key="frame" x="50" y="445" width="62" height="30"/>
+                                <rect key="frame" x="50" y="445" width="275" height="30"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <state key="normal" title="Message">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Interests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWG-gA-HgI">
-                                <rect key="frame" x="20" y="497" width="122" height="21"/>
+                                <rect key="frame" x="20" y="497" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1JW-op-7xh">
-                                <rect key="frame" x="20" y="539" width="122" height="128"/>
+                                <rect key="frame" x="20" y="539" width="335" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="LfR-iR-fpW">
-                                        <rect key="frame" x="0.0" y="28" width="122" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LfR-iR-fpW" id="CrP-QO-kmP">
-                                            <rect key="frame" x="0.0" y="0.0" width="122" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -886,38 +886,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOc-9R-wqz">
-                                <rect key="frame" x="20" y="83" width="335" height="128"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Get Image From IoT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyr-aL-5CD">
-                                <rect key="frame" x="20" y="256" width="335" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Stream Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyr-aL-5CD">
+                                <rect key="frame" x="20" y="20" width="335" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flN-6u-xLn">
+                                <rect key="frame" x="20" y="81" width="335" height="50"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="1px-pO-7Xu"/>
+                                    <constraint firstAttribute="height" constant="50" id="Sxq-th-ruO"/>
+                                </constraints>
+                                <state key="normal" title="Go To LIve Stream">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewStream_button:" destination="c2s-v9-xv5" eventType="touchUpInside" id="58i-uY-vjw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enE-Hv-xTX">
+                                <rect key="frame" x="20" y="181" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flN-6u-xLn">
-                                <rect key="frame" x="20" y="342" width="335" height="30"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
-                                <state key="normal" title="Get Image">
-                                    <color key="titleColor" systemColor="systemRedColor"/>
-                                </state>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbX-vl-o9I">
+                                <rect key="frame" x="20" y="232" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UlO-Ng-Iy0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yyr-aL-5CD" firstAttribute="leading" secondItem="UlO-Ng-Iy0" secondAttribute="leading" constant="20" id="4VS-4m-Kmd"/>
-                            <constraint firstItem="oOc-9R-wqz" firstAttribute="leading" secondItem="UlO-Ng-Iy0" secondAttribute="leading" constant="20" id="Bu9-fj-AFN"/>
-                            <constraint firstItem="UlO-Ng-Iy0" firstAttribute="trailing" secondItem="oOc-9R-wqz" secondAttribute="trailing" constant="20" id="EvM-qj-1ha"/>
-                            <constraint firstItem="flN-6u-xLn" firstAttribute="leading" secondItem="UlO-Ng-Iy0" secondAttribute="leading" constant="20" id="Ext-7U-gMQ"/>
-                            <constraint firstItem="flN-6u-xLn" firstAttribute="top" secondItem="yyr-aL-5CD" secondAttribute="bottom" constant="20" id="Y3O-xE-a5i"/>
-                            <constraint firstItem="yyr-aL-5CD" firstAttribute="top" secondItem="oOc-9R-wqz" secondAttribute="bottom" constant="20" id="YF4-9T-T93"/>
-                            <constraint firstItem="oOc-9R-wqz" firstAttribute="top" secondItem="UlO-Ng-Iy0" secondAttribute="top" constant="20" id="ikX-Gm-2Ry"/>
-                            <constraint firstItem="UlO-Ng-Iy0" firstAttribute="trailing" secondItem="flN-6u-xLn" secondAttribute="trailing" constant="20" id="lzN-m0-nMg"/>
-                            <constraint firstItem="UlO-Ng-Iy0" firstAttribute="trailing" secondItem="yyr-aL-5CD" secondAttribute="trailing" constant="20" id="w1P-NK-ZgP"/>
+                            <constraint firstItem="UlO-Ng-Iy0" firstAttribute="trailing" secondItem="flN-6u-xLn" secondAttribute="trailing" constant="20" id="5PS-uO-hod"/>
+                            <constraint firstItem="yyr-aL-5CD" firstAttribute="leading" secondItem="UlO-Ng-Iy0" secondAttribute="leading" constant="20" id="CP4-0I-dVk"/>
+                            <constraint firstItem="enE-Hv-xTX" firstAttribute="leading" secondItem="UlO-Ng-Iy0" secondAttribute="leading" constant="20" id="CVb-rY-2uJ"/>
+                            <constraint firstItem="flN-6u-xLn" firstAttribute="top" secondItem="yyr-aL-5CD" secondAttribute="bottom" constant="20" id="ESX-nA-Qpa"/>
+                            <constraint firstItem="flN-6u-xLn" firstAttribute="leading" secondItem="UlO-Ng-Iy0" secondAttribute="leading" constant="20" id="Sxh-fX-Osb"/>
+                            <constraint firstItem="yyr-aL-5CD" firstAttribute="top" secondItem="UlO-Ng-Iy0" secondAttribute="top" constant="20" id="TpI-NX-Qh8"/>
+                            <constraint firstItem="UlO-Ng-Iy0" firstAttribute="trailing" secondItem="yyr-aL-5CD" secondAttribute="trailing" constant="20" id="WiU-Ng-72o"/>
+                            <constraint firstItem="JbX-vl-o9I" firstAttribute="top" secondItem="enE-Hv-xTX" secondAttribute="bottom" constant="30" id="aL8-P1-XRa"/>
+                            <constraint firstItem="UlO-Ng-Iy0" firstAttribute="trailing" secondItem="enE-Hv-xTX" secondAttribute="trailing" constant="20" id="oM4-Wq-etl"/>
+                            <constraint firstItem="enE-Hv-xTX" firstAttribute="top" secondItem="flN-6u-xLn" secondAttribute="bottom" constant="50" id="tOJ-jq-73t"/>
+                            <constraint firstItem="JbX-vl-o9I" firstAttribute="leading" secondItem="UlO-Ng-Iy0" secondAttribute="leading" constant="20" id="taY-93-djV"/>
+                            <constraint firstItem="UlO-Ng-Iy0" firstAttribute="trailing" secondItem="JbX-vl-o9I" secondAttribute="trailing" constant="20" id="udo-sT-Ai6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Event Day" id="tQp-lV-fdJ"/>
+                    <connections>
+                        <outlet property="currentTemp_label" destination="JbX-vl-o9I" id="Ndj-9q-zv8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Axg-8I-axi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
