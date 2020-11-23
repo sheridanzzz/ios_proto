@@ -9,8 +9,6 @@ import UIKit
 
 class SearchUsersTableViewController: UITableViewController, DatabaseListener, UISearchResultsUpdating {
     
-    
-
     let CELL_USER = "userCell"
     
     var allUsers: [Users] = []

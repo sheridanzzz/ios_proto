@@ -344,61 +344,61 @@
             <objects>
                 <viewController id="ZbS-An-ZZT" customClass="EventsDetailsViewController" customModule="ios_proto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="90c-UT-Nmj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzD-0e-uad">
-                                <rect key="frame" x="10" y="10" width="355" height="21"/>
+                                <rect key="frame" x="10" y="54" width="355" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wtc-Qr-Ag2">
-                                <rect key="frame" x="100" y="41" width="175" height="128"/>
+                                <rect key="frame" x="100" y="85" width="175" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="8Iu-5V-ScD"/>
                                     <constraint firstAttribute="width" constant="175" id="Q29-Eg-dtY"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxV-5H-9n2">
-                                <rect key="frame" x="10" y="370" width="355" height="21"/>
+                                <rect key="frame" x="10" y="414" width="355" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILp-xr-XzT">
-                                <rect key="frame" x="10" y="401" width="355" height="21"/>
+                                <rect key="frame" x="10" y="445" width="355" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min Number of players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r95-xA-CFE">
-                                <rect key="frame" x="10" y="432" width="355" height="21"/>
+                                <rect key="frame" x="10" y="476" width="355" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTJ-Ez-f8K">
-                                <rect key="frame" x="10" y="463" width="355" height="21"/>
+                                <rect key="frame" x="10" y="507" width="355" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tY8-79-5P8">
-                                <rect key="frame" x="10" y="210" width="355" height="150"/>
+                                <rect key="frame" x="10" y="254" width="355" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="EWB-o0-aPB"/>
                                     <constraint firstAttribute="width" constant="355" id="e32-7q-iI6"/>
                                 </constraints>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1od-yf-Y6P">
-                                <rect key="frame" x="10" y="179" width="355" height="21"/>
+                                <rect key="frame" x="10" y="223" width="355" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWf-EZ-t1e">
-                                <rect key="frame" x="10" y="504" width="355" height="30"/>
+                                <rect key="frame" x="10" y="548" width="355" height="30"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <state key="normal" title="Go To Event">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -457,7 +457,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="825-43-if7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1743" y="-2028"/>
+            <point key="canvasLocation" x="-3430" y="-1989"/>
         </scene>
         <!--Events-->
         <scene sceneID="R9p-kQ-oLY">
@@ -883,7 +883,7 @@
             <objects>
                 <viewController id="c2s-v9-xv5" customClass="EventDayViewController" customModule="ios_proto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MWf-J0-Cnb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOc-9R-wqz">
@@ -1577,7 +1577,7 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="355" id="jvO-HH-I29"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userEvents" rowHeight="121" id="qBz-Sa-YuV">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userEventsCell" rowHeight="121" id="qBz-Sa-YuV" customClass="UserEventTableViewCell" customModule="ios_proto" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="355" height="121"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qBz-Sa-YuV" id="348-Le-0E6">
@@ -1616,6 +1616,11 @@
                                                                 <constraint firstItem="tXb-fY-RIc" firstAttribute="leading" secondItem="Cka-rM-VcO" secondAttribute="trailing" constant="10" id="x1z-pz-9oh"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="eventImageView" destination="Cka-rM-VcO" id="5SE-Yc-BG9"/>
+                                                            <outlet property="eventNameLabel" destination="qyg-Xi-8qa" id="LIQ-Fo-roy"/>
+                                                            <outlet property="sportNameLabel" destination="tXb-fY-RIc" id="LNM-XO-o9T"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -1681,6 +1686,8 @@
                         <outlet property="postcodeLabel" destination="cHS-e0-YLq" id="5gV-J2-DfE"/>
                         <outlet property="profileImageView" destination="JyT-EG-ObQ" id="wcM-nf-OsH"/>
                         <outlet property="stateLabel" destination="v6o-g5-3ue" id="n78-t8-pbA"/>
+                        <outlet property="userEventsTable" destination="gKP-kN-lWo" id="UZq-dg-AdS"/>
+                        <segue destination="ZbS-An-ZZT" kind="show" identifier="userEventsSegue" id="sJu-DD-hV4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2W9-rT-Iwj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1690,7 +1697,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Iyt-nQ-Wxh"/>
-        <segue reference="kwi-aE-Jxd"/>
+        <segue reference="sJu-DD-hV4"/>
         <segue reference="2q2-DP-Gim"/>
     </inferredMetricsTieBreakers>
     <resources>
