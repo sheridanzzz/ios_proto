@@ -37,7 +37,67 @@ class LoginViewController: UIViewController {
         view.addSubview(loginButton)
         loginButton.permissions = ["public_profile","email"]
     }
+    
+    func validateFields() -> String? {
+        
+        //CHeck all fields are filled in
+        if email_textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            pass_textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return "Please fill all fields!"
+        }
+        
+        //Check if password is correct
+        
+        if pass_textField.text!.trimmingCharacters(in: .whitespacesAndNewlines).count <= 6 {
+            return "Password should be more than 6 characters"
+        }
+        
+        //Check if email is correct
+        
+        if self.isValidEmailAddress(emailAddressString: email_textField.text!.trimmingCharacters(in: .whitespacesAndNewlines)) == false {
+            return "Please enter email address in correct format!"
+        }
+        
+        return nil
+    }
+    
+    func isValidEmailAddress(emailAddressString: String) -> Bool {
+        
+        var returnValue = true
+        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = emailAddressString as NSString
+            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
+            
+            if results.count == 0
+            {
+                returnValue = false
+            }
+            
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            returnValue = false
+        }
+        
+        return  returnValue
+    }
+    
     @IBAction func login_button(_ sender: Any) {
+        
+        let err = validateFields()
+        
+        if err != nil {
+            //let alert = UIAlertController()
+            //alert.title = "Error!"
+            //alert.message = err
+            //alert.addButton(withTitle: "Dismiss")
+            //alert.show()
+            self.displayMessage(title: "Error!", message: err!)
+            return
+        }
+        
         if let email = email_textField.text, let password = pass_textField.text {
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
                 guard let strongSelf = self else { return }
@@ -81,5 +141,13 @@ class LoginViewController: UIViewController {
     @IBAction func register_button(_ sender: Any) {
     }
     @IBAction func forgot_button(_ sender: Any) {
+    }
+    
+    func displayMessage(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message,
+                                                preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style:
+                                                    UIAlertAction.Style.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
 }
