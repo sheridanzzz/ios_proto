@@ -7,6 +7,10 @@
 
 import UIKit
 import MapKit
+import Firebase
+import FirebaseAuth
+import FirebaseStorage
+import FirebaseFirestore
 
 class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, DatabaseListener{
    
@@ -43,9 +47,20 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
     var sportNames: [String] = []
     var eventImageURL: String?
     
+    var currentUserId: String? = nil
+    var db: Firestore?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        db = Firestore.firestore()
+        // Do any additional setup after loading the view.
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            // ...
+            self.currentUserId = auth.currentUser?.uid
+        }
+        
         
         self.sportPicker.dataSource = self
         self.sportPicker.delegate = self
@@ -141,7 +156,7 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
 //            newEvent?.status = "on"
             
             
-            let _ = databaseController?.addEvent(eventName: newEventName, eventDateTime: dateMain!, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: eventImageURL ?? "on" , status: "ON", minNumPlayers: Int(newMinPlayers) ?? 0, sport: sportText ?? "")
+            let _ = databaseController?.addEvent(eventName: newEventName, eventDateTime: dateMain!, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: eventImageURL ?? "on" , status: "ON", minNumPlayers: Int(newMinPlayers) ?? 0, sport: sportText ?? "", uuid: currentUserId ?? " ")
             
             //let _ = databaseController?.addSportToEvent(sport: pickedSport!, event: newEvent!)
             

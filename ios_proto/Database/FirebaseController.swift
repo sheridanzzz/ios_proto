@@ -12,6 +12,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class FirebaseController: NSObject, DatabaseProtocol {
+
     
     let DEFAULT_USER_NAME = "Sheridan"
     var listeners = MulticastDelegate<DatabaseListener>()
@@ -451,7 +452,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         return user
     }
     
-    func addEvent(eventName: String, eventDateTime: Date, numberOfPlayers: Int, locationName: String, long: Double, lat: Double, annotationImg: String, status: String, minNumPlayers: Int, sport: String) -> Events {
+    func addEvent(eventName: String, eventDateTime: Date, numberOfPlayers: Int, locationName: String, long: Double, lat: Double, annotationImg: String, status: String, minNumPlayers: Int, sport: String, uuid: String) -> Events {
         let event = Events()
         event.eventName = eventName
         event.eventDateTime = eventDateTime
@@ -463,6 +464,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         event.status = status
         event.minNumPlayers = minNumPlayers
         event.sport = sport
+        event.uuid = uuid
         
         do {
             if let eventRef = try eventsRef?.addDocument(from: event) {

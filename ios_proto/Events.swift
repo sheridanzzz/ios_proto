@@ -20,6 +20,7 @@ class Events: Codable, Equatable {
     var status: String? = ""
     var minNumPlayers: Int?
     var sport: String? = ""
+    var uuid: String? = ""
     //var eventSport = Sports()
     //var eventsUsers = [Users]()
     
@@ -37,6 +38,7 @@ class Events: Codable, Equatable {
         case status
         case minNumPlayers
         case sport
+        case uuid
         //case eventSport
     }
     

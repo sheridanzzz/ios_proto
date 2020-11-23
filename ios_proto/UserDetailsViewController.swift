@@ -64,7 +64,9 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
         // Do any additional setup after loading the view.
         Auth.auth().addStateDidChangeListener { (auth, user) in
             // ...
-            self.currentUserId = auth.currentUser?.uid
+            let currId = auth.currentUser?.uid
+            
+            self.currentUserId = currId
         }
         
         firstNameLabel.text = "First Name:" + " " + firstName
@@ -94,7 +96,7 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allEvents.count
+        return filteredEvents.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -104,7 +106,7 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let userEventCell = tableView.dequeueReusableCell(withIdentifier: CELL_USEREVENT,
                                                       for: indexPath) as! UserEventTableViewCell
-        let event = allEvents[indexPath.row]
+        let event = filteredEvents[indexPath.row]
         userEventCell.eventNameLabel.text = event.eventName
         userEventCell.sportNameLabel.text = event.sport
         userEventCell.eventImageView.downloaded(from: event.annotationImg ?? "")
@@ -120,7 +122,7 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd hh:mm:ss"
-        let event = allEvents[indexPath.row]
+        let event = filteredEvents[indexPath.row]
         eventName = event.eventName ?? ""
         eventDateTime = df.string(from: event.eventDateTime!)
         locName = event.locationName ?? ""
@@ -156,12 +158,13 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
     
     func onEventListChange(change: DatabaseChange, events: [Events]) {
         allEvents = events
+        print(currentUserId)
         
-//        for event in allEvents{
-//            if event.uuid == currentUserId {
-//                filteredEvents.append(event)
-//            }
-//        }
+        for event in allEvents{
+            if event.uuid == currentUserId {
+                filteredEvents.append(event)
+            }
+        }
     }
     
     func onSportListChange(change: DatabaseChange, sports: [Sports]) {
