@@ -139,7 +139,6 @@
                                 <state key="normal" title="Forgot Password?"/>
                                 <connections>
                                     <action selector="forgot_button:" destination="ECI-cI-COz" eventType="touchUpInside" id="U7h-on-DhT"/>
-                                    <segue destination="ARd-Qz-5Ed" kind="show" id="NjS-2g-ltr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBo-O8-77H">
@@ -322,22 +321,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hb5-id-IXs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3892" y="372"/>
-        </scene>
-        <!--Forgot View Controller-->
-        <scene sceneID="pqg-Ll-chT">
-            <objects>
-                <viewController title="Forgot View Controller" id="ARd-Qz-5Ed" customClass="ForgotPasswordViewController" customModule="ios_proto" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="stI-z3-7eP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="lb4-Ni-rVe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Forgot Password" id="frJ-dQ-UXB"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K59-Zj-jca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-5596" y="330"/>
         </scene>
         <!--Event Details-->
         <scene sceneID="0NL-Wq-Flh">
