@@ -7,6 +7,9 @@
 
 import UIKit
 import MapKit
+import FirebaseFirestore
+import FirebaseStorage
+import FirebaseAuth
 
 
 class EventsDetailsViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
@@ -22,6 +25,8 @@ class EventsDetailsViewController: UIViewController, CLLocationManagerDelegate, 
     @IBOutlet weak var minNumberOfPlayersLabel: UILabel!
     @IBOutlet weak var sportTypeLabel: UILabel!
     
+    @IBOutlet weak var startEvent_button: UIButton!
+    
     var name: String = ""
     var location: String = ""
     var dateTime: String = ""
@@ -32,10 +37,19 @@ class EventsDetailsViewController: UIViewController, CLLocationManagerDelegate, 
     var long: Double = 0.0
     var icon: String = ""
     var pin : MKPointAnnotation!
+    var db: Firestore?
+    var currentUserId: String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        db = Firestore.firestore()
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            self.currentUserId = auth.currentUser?.uid
+        }
+        //startEvent_button.isHidden = true
+        //going_button.isHidden = true
+        //goingEvent_label.isHidden = true
+        //attend_button.isHidden = true
         
         eventNameLabel.text = "Event Name:" + " " + name
         eventDateTimeLabel.text =  "Event Date/Time:" + " " + dateTime
@@ -61,11 +75,13 @@ class EventsDetailsViewController: UIViewController, CLLocationManagerDelegate, 
         annotation.subtitle = ""
         self.mapView.addAnnotation(annotation)
         
+        
+        
     }
     
     @IBAction func startEventBtn(_ sender: Any) {
     }
-    
+
     
 }
 
