@@ -13,9 +13,9 @@ import FirebaseStorage
 import FirebaseFirestore
 
 class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, DatabaseListener{
-   
     
-   
+    //references
+    //date time pickerhttps://stackoverflow.com/questions/49991549/date-time-picker-in-swift-4
     weak var databaseController: DatabaseProtocol?
     var listenerType: ListenerType = .all
     
@@ -55,18 +55,13 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
         super.viewDidLoad()
         
         db = Firestore.firestore()
-        // Do any additional setup after loading the view.
-//        Auth.auth().addStateDidChangeListener { (auth, user) in
-//            // ...
-//            self.currentUserId = auth.currentUser?.uid
-//        }
         
         
         self.sportPicker.dataSource = self
         self.sportPicker.delegate = self
         
         
-        
+        //date picker for the user to pick the date
         datePicker = UIDatePicker()
         let currentDate = Date()  //get the current date
         datePicker?.datePickerMode = .dateAndTime
@@ -103,7 +98,6 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
-        //dnjkwndejknjk
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -137,7 +131,7 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
     
     @IBAction func createEvent(_ sender: Any) {
         
-
+        
         if eventNameField.text != "" && locationNameTextField.text != "" && maxNumPlayersTextField.text != "" && minNumPlayersTextField.text != "" && eventDateTimeTextField.text != "" && long != 0.0 && lat != 0.0 && sportText != ""{
             let newEventName = eventNameField.text!
             let newLocName = locationNameTextField.text!
@@ -147,25 +141,13 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
             let lati = lat
             let longi = long
             
-//            newEvent?.eventName = newEventName
-//            newEvent?.locationName = newLocName
-//            newEvent?.minNumPlayers = Int(newMinPlayers)
-//            newEvent?.numberOfPlayers = Int(newMaxPlayers)
-//            newEvent?.eventDateTime = dateMain
-//            newEvent?.lat = Double(lati)
-//            newEvent?.long = Double(longi)
-//            newEvent?.annotationImg = eventImageURL
-//            newEvent?.status = "on"
-            
+            //get current user id
             guard let userID = Auth.auth().currentUser?.uid else { return }
             
             print("user id")
             print(userID)
             
             let _ = self.databaseController?.addEvent(eventName: newEventName, eventDateTime: dateMain!, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: eventImageURL ?? "on" , status: "ON", minNumPlayers: Int(newMinPlayers) ?? 0, sport: sportText ?? "", uuid: userID )
-            
-            
-            //let _ = databaseController?.addSportToEvent(sport: pickedSport!, event: newEvent!)
             
             navigationController?.popViewController(animated: true)
             return

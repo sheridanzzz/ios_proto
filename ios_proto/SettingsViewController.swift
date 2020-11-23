@@ -54,6 +54,12 @@ class SettingsViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
         profileImg.addGestureRecognizer(tapGesture)
         
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background.jpg")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+        
     }
     
     @IBAction func updateImage_btnPressed(_ sender: Any) {

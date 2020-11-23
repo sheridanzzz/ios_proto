@@ -12,7 +12,7 @@ class Sports: Codable, Equatable {
     var id: String?
     var sportName: String? = ""
     var sportsImg: String? = ""
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case sportName

@@ -63,15 +63,6 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
         userEventsTable.delegate = self
         userEventsTable.dataSource = self
         
-        //        db = Firestore.firestore()
-        //        // Do any additional setup after loading the view.
-        //        Auth.auth().addStateDidChangeListener { (auth, user) in
-        //            // ...
-        //            let currUser = auth.currentUser?.uid
-        //            print("Curr user")
-        //            self.currentUserId = currUser
-        //            print(self.currentUserId!)
-        //        }
         
         firstNameLabel.text = "First Name:" + " " + firstName
         lastNameLabel.text =  "Last Name:" + " " + lastName
@@ -85,18 +76,11 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
         
-        //        print(allEvents.count)
-        //        print(allUsers.count)
-        //        for event in allEvents{
-        //            for user in allUsers{
-        //                if event.uuid == user.uuid {
-        //                    print(event.uuid)
-        //                    self.filteredEvents.append(event)
-        //                }
-        //            }
-        //        }
-        //
-        //        print(filteredEvents.count)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background.jpg")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
         
         
         // Do any additional setup after loading the view.
@@ -122,6 +106,7 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
         return 100
     }
     
+    //shows the events the user created on the table view
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let userEventCell = tableView.dequeueReusableCell(withIdentifier: CELL_USEREVENT,
                                                           for: indexPath) as! UserEventTableViewCell
@@ -131,11 +116,6 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
         userEventCell.eventImageView.downloaded(from: event.annotationImg ?? "")
         return userEventCell
         
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_INFO, for: indexPath)
-        //        cell.textLabel?.text = "\(allHeroes.count) heroes in the database"
-        //        cell.textLabel?.textColor = .secondaryLabel
-        //        cell.selectionStyle = .none
-        //        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -178,15 +158,13 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
     func onEventListChange(change: DatabaseChange, events: [Events]) {
         allEvents = events
         
-        print(uuid)
-        print(allEvents.count)
+        //gets the events the user created
         for event in allEvents{
             if event.uuid == uuid {
                 filteredEvents.append(event)
             }
         }
         
-        //guard let userID = Auth.auth().currentUser?.uid else { return }
         print(filteredEvents.count)
     }
     

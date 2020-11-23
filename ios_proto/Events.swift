@@ -21,8 +21,7 @@ class Events: Codable, Equatable {
     var minNumPlayers: Int?
     var sport: String? = ""
     var uuid: String? = ""
-    //var eventSport = Sports()
-    //var eventsUsers = [Users]()
+    
     
     
     
@@ -39,7 +38,6 @@ class Events: Codable, Equatable {
         case minNumPlayers
         case sport
         case uuid
-        //case eventSport
     }
     
     static func == (lhs: Events, rhs: Events) -> Bool {

@@ -46,10 +46,6 @@ class EventsDetailsViewController: UIViewController, CLLocationManagerDelegate, 
         Auth.auth().addStateDidChangeListener { (auth, user) in
             self.currentUserId = auth.currentUser?.uid
         }
-        //startEvent_button.isHidden = true
-        //going_button.isHidden = true
-        //goingEvent_label.isHidden = true
-        //attend_button.isHidden = true
         
         eventNameLabel.text = "Event Name:" + " " + name
         eventDateTimeLabel.text =  "Event Date/Time:" + " " + dateTime
@@ -75,13 +71,16 @@ class EventsDetailsViewController: UIViewController, CLLocationManagerDelegate, 
         annotation.subtitle = ""
         self.mapView.addAnnotation(annotation)
         
-        
-        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+                    UIImage(named: "background.jpg")?.draw(in: self.view.bounds)
+                    let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+                    UIGraphicsEndImageContext()
+                    self.view.backgroundColor = UIColor(patternImage: image)
     }
     
     @IBAction func startEventBtn(_ sender: Any) {
     }
-
+    
     
 }
 
@@ -94,8 +93,7 @@ extension UIImageView {
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
                 var image = UIImage(data: data)
-                else { return }
-            //image = resize(image: image, newWidth: CGFloat())!
+            else { return }
             DispatchQueue.main.async() { [weak self] in
                 self?.image = image
                 

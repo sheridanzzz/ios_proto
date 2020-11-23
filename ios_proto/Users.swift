@@ -8,13 +8,12 @@
 import UIKit
 
 class Users: Codable, Equatable {
-   
+    
     var id: String?
     var firstName: String? = ""
     var lastName: String? = ""
     var gender: String? = ""
     var dateOfBirth: String? = ""
-    //var address: String? = ""
     var state: String? = ""
     var postcode: Int?
     var registerationDate: String? = ""
@@ -28,7 +27,6 @@ class Users: Codable, Equatable {
         case lastName
         case gender
         case dateOfBirth
-        //case address
         case state
         case postcode
         case registerationDate

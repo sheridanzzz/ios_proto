@@ -13,7 +13,6 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
     
     var allUsers: [Users] = []
     var filteredUsers: [Users] = []
-    //weak var userDelegate: AddEventDelegate?
     weak var databaseController: DatabaseProtocol?
     var listenerType: ListenerType = .all
     var userName: String = ""
@@ -38,13 +37,10 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.reloadData()
-        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
         
         filteredUsers = allUsers
-        //print(allEvents)
         
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -54,6 +50,8 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
         
         // This view controller decides how the search controller is presented
         definesPresentationContext = true
+        
+        tableView.backgroundView = UIImageView(image: UIImage(named: "background.jpg"))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,7 +100,6 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
         let userCell = tableView.dequeueReusableCell(withIdentifier: CELL_USER,
                                                       for: indexPath) as! SearchUserTableViewCell
         let user = filteredUsers[indexPath.row]
-        print(user.lastName)
         userCell.userNameLabel.text = user.firstName
         userCell.lastNameLabel.text = user.lastName
         userCell.profileImageLabel.downloaded(from: user.profileImg ?? "" )
@@ -110,6 +107,7 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
     }
     
     
+    //check which user selected
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let user = filteredUsers[indexPath.row]
@@ -155,8 +153,6 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
     }
     
     func onUserListChange(change: DatabaseChange, users: [Users]) {
-        tableView.reloadData()
-        allUsers = []
         allUsers = users
         print(allUsers.count)
         print("user")

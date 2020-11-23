@@ -36,7 +36,6 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         databaseController = appDelegate.databaseController
         
         filteredEvents = allEvents
-        //print(allEvents)
         
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -46,6 +45,8 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         
         // This view controller decides how the search controller is presented
         definesPresentationContext = true
+        
+        tableView.backgroundView = UIImageView(image: UIImage(named: "background.jpg"))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,9 +87,9 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         return 100
     }
     
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                return filteredEvents.count
-        }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredEvents.count
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let eventCell = tableView.dequeueReusableCell(withIdentifier: CELL_EVENT,
@@ -98,12 +99,6 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         eventCell.sportNameLabel.text = event.sport
         eventCell.iconImageView.downloaded(from: event.annotationImg ?? "")
         return eventCell
-        
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_INFO, for: indexPath)
-        //        cell.textLabel?.text = "\(allHeroes.count) heroes in the database"
-        //        cell.textLabel?.textColor = .secondaryLabel
-        //        cell.selectionStyle = .none
-        //        return cell
     }
     
     
@@ -123,15 +118,8 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         
         
         self.performSegue(withIdentifier: "eventDetailsSegue", sender: self)
-            tableView.deselectRow(at: indexPath, animated: false)
-            return
-        
-//        if eventDelegate?.addEvent(newEvent: filteredEvents[indexPath.row]) ?? false {
-//            navigationController?.popViewController(animated: false)
-//            return
-//        }
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        displayMessage(title: "Party Full", message: "Unable to add more members to party")
+        tableView.deselectRow(at: indexPath, animated: false)
+        return
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -148,8 +136,6 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
             ed?.icon = icon
             ed?.lat = lat
             ed?.long = long
-//            ed?.icon = imageIcon
-//            ed?.pin = loco
         }
     }
     
@@ -179,6 +165,7 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
     
 }
 
+//used for downloading the image
 extension UIImageView {
     func downloaded2(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         contentMode = mode
@@ -188,8 +175,7 @@ extension UIImageView {
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
                 var image = UIImage(data: data)
-                else { return }
-            //image = resize(image: image, newWidth: CGFloat())!
+            else { return }
             DispatchQueue.main.async() { [weak self] in
                 self?.image = image
                 

@@ -36,6 +36,13 @@ class LoginViewController: UIViewController {
         //loginButton.center = view.bottomAnchor
         view.addSubview(loginButton)
         loginButton.permissions = ["public_profile","email"]
+        
+        //background image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+            UIImage(named: "background.jpg")?.draw(in: self.view.bounds)
+            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            self.view.backgroundColor = UIColor(patternImage: image)
     }
     
     func validateFields() -> String? {

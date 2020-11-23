@@ -1269,8 +1269,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikp-8U-Jfe">
                                 <rect key="frame" x="0.0" y="0.0" width="167.5" height="1080"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wo4-VN-y2G">
-                                        <rect key="frame" x="0.0" y="0.0" width="167.5" height="1000"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wo4-VN-y2G">
+                                        <rect key="frame" x="0.0" y="0.0" width="387" height="1000"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vf-Uz-ioc">
                                                 <rect key="frame" x="10" y="10" width="147.5" height="33.5"/>
@@ -1492,6 +1492,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ikp-8U-Jfe" firstAttribute="bottom" secondItem="tFF-a6-BeR" secondAttribute="bottom" id="Fp8-Jr-Wip"/>
+                            <constraint firstAttribute="trailing" secondItem="Ikp-8U-Jfe" secondAttribute="trailing" id="iNh-6e-Vbt"/>
                             <constraint firstItem="Ikp-8U-Jfe" firstAttribute="leading" secondItem="tFF-a6-BeR" secondAttribute="leading" id="rIr-Th-Xqz"/>
                             <constraint firstItem="Wo4-VN-y2G" firstAttribute="width" secondItem="Xwc-og-3cU" secondAttribute="width" id="rfL-XR-tc1"/>
                             <constraint firstItem="Ikp-8U-Jfe" firstAttribute="top" secondItem="tFF-a6-BeR" secondAttribute="top" id="tPC-dd-vPX"/>

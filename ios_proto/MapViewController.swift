@@ -11,10 +11,16 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate, DatabaseListener {
     
+    //refernces
+    //annotations: https://stackoverflow.com/questions/42351358/swift-custom-mkpointannotation-with-image
     
-    
+    //References:
+    //call out: https://stackoverflow.com/questions/51091590/swift-storyboard-creating-a-segue-in-mapview-using-calloutaccessorycontroltapp
+
+    //How to pass map annotation on segue to mapView on another vc?:  https://stackoverflow.com/questions/44139763/how-to-pass-map-annotation-on-segue-to-mapview-on-another-vc
+
+    //Perform Segue from map annotation:  https://stackoverflow.com/questions/33053832/swift-perform-segue-from-map-annotation
     @IBOutlet weak var mapView: MKMapView!
-    
     
     var imageName: String = ""
     var exName:String = ""
@@ -25,18 +31,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, DatabaseListener {
     var listenerType: ListenerType = .all
     weak var databaseController: DatabaseProtocol?
     var allEvents: [Events] = []
-    //var fliteredEvents: based on swiped sports
-    //kfnwfcwe
-    //cecerce
-    //kdnewkdnwkjnde
-    //swwswwsswww
     var eventsList = [LocationAnnotation]()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         
+        //centers map
         let latitude:CLLocationDegrees = -37.8304
         let longitude:CLLocationDegrees = 144.9796
         let location = CLLocationCoordinate2DMake(latitude, longitude)
@@ -57,18 +58,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, DatabaseListener {
         super.viewWillDisappear(animated)
         databaseController?.removeListener(listener: self)
     }
-    
-    //adds annotations to the map view first
-    //    private lazy var addAnno: Void = {
-    //        for event in allEvents {
-    //            let location = LocationAnnotation(title: event.eventName ?? "", subtitle: event.locationName ?? "", image: event.annotationImg ?? "", lat: event.lat ?? 0.0 , long: event.long ?? 0.0)
-    //            eventsList.append(location)
-    //        }
-    //
-    //        for i in eventsList{
-    //            mapView.addAnnotation(i)
-    //        }
-    //    }()
     
     lazy var removeAnno: Void = {
         print(eventsList.count)
@@ -106,28 +95,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, DatabaseListener {
         mapView.setRegion(mapView.regionThatFits(zoomRegion), animated: true)
     }
     
-    //too add annotation images
-    //    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-    //        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
-    //
-    //        if annotationView == nil {
-    //            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
-    //        }
-    //
-    //        annotationView?.image = nil
-    //        exName = ""
-    //        exDes = ""
-    //        lat = 0.0
-    //        long = 0.0
-    //
-    //        let cpa = annotation as! LocationAnnotation
-    //        annotationView?.image = UIImage(named: cpa.image ?? "")
-    //        annotationView?.canShowCallout = true
-    //        annotationView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-    //
-    //        return annotationView
-    //    }
-    
+    //adds annotations
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation.isKind(of: MKUserLocation.self) {  //Handle user location annotation..
             return nil  //Default is to let the system handle it.
