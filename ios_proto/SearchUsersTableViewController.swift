@@ -33,10 +33,12 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
     var gender: String = ""
     var profilePic: String = ""
     var postcode: Int = 0
-    
+    var uuid: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.reloadData()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
@@ -119,6 +121,7 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
         postcode = user.postcode ?? 0
         profilePic = user.profileImg ?? ""
         state = user.state ?? ""
+        uuid = user.uuid ?? ""
         
         self.performSegue(withIdentifier: "userDetailsSegue", sender: self)
             tableView.deselectRow(at: indexPath, animated: false)
@@ -137,6 +140,7 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
             ed?.profilePic = profilePic
             ed?.state = state
             ed?.postcode = postcode
+            ed?.uuid = uuid
         }
     }
     
@@ -151,6 +155,8 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
     }
     
     func onUserListChange(change: DatabaseChange, users: [Users]) {
+        tableView.reloadData()
+        allUsers = []
         allUsers = users
         print(allUsers.count)
         print("user")

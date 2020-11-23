@@ -13,7 +13,7 @@ import FirebaseFirestore
 
 class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITableViewDelegate, DatabaseListener {
     
-
+    
     let CELL_USEREVENT = "userEventsCell"
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
@@ -35,12 +35,15 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
     var gender: String = ""
     var profilePic: String = ""
     var postcode: Int = 0
+    var uuid: String = ""
     
     var currentUserId: String? = nil
     var db: Firestore?
     
     var allEvents: [Events] = []
     var filteredEvents: [Events] = []
+    
+    var allUsers: [Users] = []
     
     var eventName: String = ""
     var eventDateTime: String = ""
@@ -60,15 +63,15 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
         userEventsTable.delegate = self
         userEventsTable.dataSource = self
         
-        db = Firestore.firestore()
-        // Do any additional setup after loading the view.
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            // ...
-            let currUser = auth.currentUser?.uid
-            print("Curr user")
-            self.currentUserId = currUser
-            print(self.currentUserId!)
-        }
+        //        db = Firestore.firestore()
+        //        // Do any additional setup after loading the view.
+        //        Auth.auth().addStateDidChangeListener { (auth, user) in
+        //            // ...
+        //            let currUser = auth.currentUser?.uid
+        //            print("Curr user")
+        //            self.currentUserId = currUser
+        //            print(self.currentUserId!)
+        //        }
         
         firstNameLabel.text = "First Name:" + " " + firstName
         lastNameLabel.text =  "Last Name:" + " " + lastName
@@ -81,7 +84,21 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
-
+        
+        //        print(allEvents.count)
+        //        print(allUsers.count)
+        //        for event in allEvents{
+        //            for user in allUsers{
+        //                if event.uuid == user.uuid {
+        //                    print(event.uuid)
+        //                    self.filteredEvents.append(event)
+        //                }
+        //            }
+        //        }
+        //
+        //        print(filteredEvents.count)
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -97,6 +114,7 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return filteredEvents.count
     }
     
@@ -106,7 +124,7 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let userEventCell = tableView.dequeueReusableCell(withIdentifier: CELL_USEREVENT,
-                                                      for: indexPath) as! UserEventTableViewCell
+                                                          for: indexPath) as! UserEventTableViewCell
         let event = filteredEvents[indexPath.row]
         userEventCell.eventNameLabel.text = event.eventName
         userEventCell.sportNameLabel.text = event.sport
@@ -136,8 +154,8 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
         
         
         self.performSegue(withIdentifier: "userEventsSegue", sender: self)
-            tableView.deselectRow(at: indexPath, animated: false)
-            return
+        tableView.deselectRow(at: indexPath, animated: false)
+        return
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -159,13 +177,17 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
     
     func onEventListChange(change: DatabaseChange, events: [Events]) {
         allEvents = events
-        print(currentUserId)
         
+        print(uuid)
+        print(allEvents.count)
         for event in allEvents{
-            if event.uuid == currentUserId {
+            if event.uuid == uuid {
                 filteredEvents.append(event)
             }
         }
+        
+        //guard let userID = Auth.auth().currentUser?.uid else { return }
+        print(filteredEvents.count)
     }
     
     func onSportListChange(change: DatabaseChange, sports: [Sports]) {
@@ -173,6 +195,6 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
     }
     
     func onUserListChange(change: DatabaseChange, users: [Users]) {
-        //do nothing
+        //nothing
     }
 }
