@@ -45,6 +45,7 @@ class LoginViewController: UIViewController {
             self.view.backgroundColor = UIColor(patternImage: image)
     }
     
+    //function to validate the fields
     func validateFields() -> String? {
         
         //CHeck all fields are filled in
@@ -68,6 +69,7 @@ class LoginViewController: UIViewController {
         return nil
     }
     
+    // regex for email address
     func isValidEmailAddress(emailAddressString: String) -> Bool {
         
         var returnValue = true

@@ -30,7 +30,7 @@ class SettingsViewController: UIViewController {
             let currUser = auth.currentUser?.uid
             print("Curr user")
             self.currentUserId = currUser
-            print(self.currentUserId!)
+            print(self.currentUserId)
         }
         
         self.db?.collection("users").whereField("uuid", isEqualTo: self.currentUserId).getDocuments() { (querySnapshot, err) in
