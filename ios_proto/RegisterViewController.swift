@@ -39,10 +39,10 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     @IBAction func datePicker_changed(_ sender: Any) {
         let dateFormatter = DateFormatter()
-
+        
         dateFormatter.dateStyle = DateFormatter.Style.short
         dateFormatter.timeStyle = DateFormatter.Style.short
-
+        
         let strDate = dateFormatter.string(from: date_datePicker.date)
         dateText = strDate
     }
@@ -77,28 +77,28 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         return nil
     }
-
+    
     func validatePassword(_ password: String) -> Bool {
         //At least 8 characters
         if password.count < 8 {
             return false
         }
-
+        
         //At least one digit
         if password.range(of: #"\d+"#, options: .regularExpression) == nil {
             return false
         }
-
+        
         //At least one letter
         if password.range(of: #"\p{Alphabetic}+"#, options: .regularExpression) == nil {
             return false
         }
-
+        
         //No whitespace charcters
         if password.range(of: #"\s+"#, options: .regularExpression) != nil {
             return false
         }
-
+        
         return true
     }
     
@@ -222,8 +222,8 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     // Capture the picker view selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-           // This method is triggered whenever the user makes a change to the picker selection.
-           // The parameter named row and component represents what was selected.
+        // This method is triggered whenever the user makes a change to the picker selection.
+        // The parameter named row and component represents what was selected.
         selectedGender = pickerData[row]
         gender_text = selectedGender
     }

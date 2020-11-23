@@ -44,7 +44,6 @@
 		50E6ADCA2553D0CE00DD6C5D /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6ADC92553D0CE00DD6C5D /* LocationAnnotation.swift */; };
 		50E6ADD22553D5AC00DD6C5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6ADD12553D5AC00DD6C5D /* LoginViewController.swift */; };
 		50E6ADD52553D78300DD6C5D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6ADD42553D78300DD6C5D /* RegisterViewController.swift */; };
-		50E6ADD82553D7E000DD6C5D /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6ADD72553D7E000DD6C5D /* ForgotPasswordViewController.swift */; };
 		50E6ADDB2553D81100DD6C5D /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6ADDA2553D81100DD6C5D /* FacebookViewController.swift */; };
 		B8D702D5EFF010C9F6A45ABC /* Pods_ios_proto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEEEC5F25CFBFAAD91C8806 /* Pods_ios_proto.framework */; };
 /* End PBXBuildFile section */
@@ -89,7 +88,6 @@
 		50E6ADC92553D0CE00DD6C5D /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		50E6ADD12553D5AC00DD6C5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50E6ADD42553D78300DD6C5D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		50E6ADD72553D7E000DD6C5D /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		50E6ADDA2553D81100DD6C5D /* FacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
 		6FAA10B2BCD93AAC79138247 /* Pods-ios_proto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_proto.release.xcconfig"; path = "Target Support Files/Pods-ios_proto/Pods-ios_proto.release.xcconfig"; sourceTree = "<group>"; };
 		BDA495F24ED61C3C2B462B7E /* Pods-ios_proto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_proto.debug.xcconfig"; path = "Target Support Files/Pods-ios_proto/Pods-ios_proto.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 				50E6ADC92553D0CE00DD6C5D /* LocationAnnotation.swift */,
 				50E6ADD12553D5AC00DD6C5D /* LoginViewController.swift */,
 				50E6ADD42553D78300DD6C5D /* RegisterViewController.swift */,
-				50E6ADD72553D7E000DD6C5D /* ForgotPasswordViewController.swift */,
 				50E6ADDA2553D81100DD6C5D /* FacebookViewController.swift */,
 				3E531CBE2563A8260071E5C2 /* SignUpViewController.swift */,
 				500F068425640AE70029033E /* Users.swift */,
@@ -338,7 +335,6 @@
 				50A210C52567C5D900FA663A /* EventTableViewCell.swift in Sources */,
 				3EB71E462567FB8E0020EDD6 /* SettingsViewController.swift in Sources */,
 				5094B0672553395E003849BC /* KolodaViewController.swift in Sources */,
-				50E6ADD82553D7E000DD6C5D /* ForgotPasswordViewController.swift in Sources */,
 				500F068525640AE70029033E /* Users.swift in Sources */,
 				3E0537F925697AF300044B76 /* ChatMessagesViewController.swift in Sources */,
 				50C25A1A253AF8AB00A03316 /* SceneDelegate.swift in Sources */,
