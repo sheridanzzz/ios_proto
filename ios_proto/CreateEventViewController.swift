@@ -56,10 +56,10 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
         
         db = Firestore.firestore()
         // Do any additional setup after loading the view.
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            // ...
-            self.currentUserId = auth.currentUser?.uid
-        }
+//        Auth.auth().addStateDidChangeListener { (auth, user) in
+//            // ...
+//            self.currentUserId = auth.currentUser?.uid
+//        }
         
         
         self.sportPicker.dataSource = self
@@ -68,7 +68,9 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
         
         
         datePicker = UIDatePicker()
+        let currentDate = Date()  //get the current date
         datePicker?.datePickerMode = .dateAndTime
+        datePicker?.minimumDate = currentDate
         eventDateTimeTextField.inputView = datePicker
         datePicker?.addTarget(self, action: #selector(dateChanged(datePicker:)), for: .valueChanged)
         
@@ -155,14 +157,23 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
 //            newEvent?.annotationImg = eventImageURL
 //            newEvent?.status = "on"
             
+            guard let userID = Auth.auth().currentUser?.uid else { return }
             
-            let _ = databaseController?.addEvent(eventName: newEventName, eventDateTime: dateMain!, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: eventImageURL ?? "on" , status: "ON", minNumPlayers: Int(newMinPlayers) ?? 0, sport: sportText ?? "", uuid: currentUserId ?? " ")
+            print("user id")
+            print(userID)
+            
+            let _ = self.databaseController?.addEvent(eventName: newEventName, eventDateTime: dateMain!, numberOfPlayers: Int(newMaxPlayers) ?? 0, locationName: newLocName, long: Double(longi), lat: Double(lati), annotationImg: eventImageURL ?? "on" , status: "ON", minNumPlayers: Int(newMinPlayers) ?? 0, sport: sportText ?? "", uuid: userID )
+            
             
             //let _ = databaseController?.addSportToEvent(sport: pickedSport!, event: newEvent!)
             
             navigationController?.popViewController(animated: true)
             return
         }
+        
+        let max = Int(maxNumPlayersTextField.text ?? "")
+        
+        let min = Int(minNumPlayersTextField.text ?? "")!
         
         var errorMsg = "Please ensure all fields are filled:\n"
         
@@ -190,6 +201,14 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, MK
         
         if sportText == "" {
             errorMsg += "- Must select a sport\n"
+        }
+        
+        if min > max ?? 1{
+            errorMsg += "- Min players cant be more than max players\n"
+        }
+        
+        if min == 0 || max == 0 {
+            errorMsg += "- must have more than 0 players\n"
         }
         
         displayMessage(title: "Not all fields filled", message: errorMsg)

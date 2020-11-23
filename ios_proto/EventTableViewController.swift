@@ -122,7 +122,7 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         long = event.long!
         
         
-        self.performSegue(withIdentifier: "userEventsSegue", sender: self)
+        self.performSegue(withIdentifier: "eventDetailsSegue", sender: self)
             tableView.deselectRow(at: indexPath, animated: false)
             return
         
