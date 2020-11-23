@@ -26,9 +26,6 @@ class EventsDetailsViewController: UIViewController, CLLocationManagerDelegate, 
     @IBOutlet weak var sportTypeLabel: UILabel!
     
     @IBOutlet weak var startEvent_button: UIButton!
-    @IBOutlet weak var going_button: UIButton!
-    @IBOutlet weak var goingEvent_label: UILabel!
-    @IBOutlet weak var attend_button: UIButton!
     
     var name: String = ""
     var location: String = ""
@@ -49,6 +46,10 @@ class EventsDetailsViewController: UIViewController, CLLocationManagerDelegate, 
         Auth.auth().addStateDidChangeListener { (auth, user) in
             self.currentUserId = auth.currentUser?.uid
         }
+        //startEvent_button.isHidden = true
+        //going_button.isHidden = true
+        //goingEvent_label.isHidden = true
+        //attend_button.isHidden = true
         
         eventNameLabel.text = "Event Name:" + " " + name
         eventDateTimeLabel.text =  "Event Date/Time:" + " " + dateTime
@@ -75,30 +76,13 @@ class EventsDetailsViewController: UIViewController, CLLocationManagerDelegate, 
         annotation.subtitle = ""
         self.mapView.addAnnotation(annotation)
         
-        self.db?.collection("users").whereField("uuid", isEqualTo: self.currentUserId!).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                //print("HELLLLLLOOOOOOOO")
-                //print(querySnapshot!.documents[0].data())
-                //for document in querySnapshot!.documents {
-                //    print("\(document.documentID) => \(document.data())")
-                //    self.db?.collection("users").document(document.documentID).updateData(["profileImg" : metaImageUrl])
-                //}
-            }
-        }
         
         
-    }
-    
-    @IBAction func attendEvent_button(_ sender: Any) {
     }
     
     @IBAction func startEventBtn(_ sender: Any) {
     }
-    
-    @IBAction func going_EventBtn(_ sender: Any) {
-    }
+
     
 }
 
