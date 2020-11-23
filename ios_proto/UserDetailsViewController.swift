@@ -64,9 +64,10 @@ class UserDetailsViewController: UIViewController,  UITableViewDataSource, UITab
         // Do any additional setup after loading the view.
         Auth.auth().addStateDidChangeListener { (auth, user) in
             // ...
-            let currId = auth.currentUser?.uid
-            
-            self.currentUserId = currId
+            let currUser = auth.currentUser?.uid
+            print("Curr user")
+            self.currentUserId = currUser
+            print(self.currentUserId!)
         }
         
         firstNameLabel.text = "First Name:" + " " + firstName
