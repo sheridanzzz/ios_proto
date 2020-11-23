@@ -26,8 +26,11 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
         Auth.auth().addStateDidChangeListener { (auth, user) in
             // ...
-            self.uuid_textField.text = auth.currentUser?.uid
-            self.currentUserId = auth.currentUser?.uid
+            self.uuid_textField.text = auth.currentUser?.email
+            let currUser = auth.currentUser?.uid
+            print("Curr user")
+            self.currentUserId = currUser
+            print(self.currentUserId!)
         }
         
         self.db?.collection("users").whereField("uuid", isEqualTo: self.currentUserId).getDocuments() { (querySnapshot, err) in
