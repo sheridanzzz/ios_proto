@@ -9,6 +9,8 @@ import UIKit
 
 class SearchUserTableViewCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var profileImageLabel: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

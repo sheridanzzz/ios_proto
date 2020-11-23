@@ -82,6 +82,10 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
         return 1
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
                 return filteredUsers.count
         }
@@ -92,6 +96,8 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
         let user = filteredUsers[indexPath.row]
         print(user.firstName)
         userCell.userNameLabel.text = user.firstName
+        userCell.lastNameLabel.text = user.LastName
+        userCell.profileImageLabel.downloaded(from: user.profileImg ?? "" )
         return userCell
     }
     

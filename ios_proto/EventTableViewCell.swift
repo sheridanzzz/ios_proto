@@ -10,6 +10,7 @@ import UIKit
 class EventTableViewCell: UITableViewCell {
 
     @IBOutlet weak var eventNameLabel: UILabel!
+    @IBOutlet weak var sportNameLabel: UILabel!
     
     @IBOutlet weak var iconImageView: UIImageView!
     

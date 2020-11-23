@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class EventTableViewController: UITableViewController, DatabaseListener, UISearchResultsUpdating {
     
@@ -81,6 +82,10 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         return 1
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
                 return filteredEvents.count
         }
@@ -90,6 +95,8 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
                                                       for: indexPath) as! EventTableViewCell
         let event = filteredEvents[indexPath.row]
         eventCell.eventNameLabel.text = event.eventName
+        eventCell.sportNameLabel.text = event.sport
+        eventCell.iconImageView.downloaded(from: event.annotationImg ?? "")
         return eventCell
         
         //        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_INFO, for: indexPath)
@@ -168,5 +175,29 @@ class EventTableViewController: UITableViewController, DatabaseListener, UISearc
         alertController.addAction(UIAlertAction(title: "Dismiss",
                                                 style: UIAlertAction.Style.default,handler: nil))
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+}
+
+extension UIImageView {
+    func downloaded2(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                var image = UIImage(data: data)
+                else { return }
+            //image = resize(image: image, newWidth: CGFloat())!
+            DispatchQueue.main.async() { [weak self] in
+                self?.image = image
+                
+            }
+        }.resume()
+    }
+    func downloaded2(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloaded(from: url, contentMode: mode)
     }
 }
