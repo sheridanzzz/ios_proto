@@ -113,6 +113,7 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let user = filteredUsers[indexPath.row]
+        print(postcode)
         firstName = user.firstName ?? ""
         lastName = user.lastName ?? ""
         gender = user.gender ?? ""
@@ -137,6 +138,7 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
             ed?.dob = dob
             ed?.profilePic = profilePic
             ed?.state = state
+            ed?.postcode = postcode
         }
     }
     
