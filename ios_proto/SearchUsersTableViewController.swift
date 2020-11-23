@@ -94,9 +94,9 @@ class SearchUsersTableViewController: UITableViewController, DatabaseListener, U
         let userCell = tableView.dequeueReusableCell(withIdentifier: CELL_USER,
                                                       for: indexPath) as! SearchUserTableViewCell
         let user = filteredUsers[indexPath.row]
-        print(user.firstName)
+        print(user.lastName)
         userCell.userNameLabel.text = user.firstName
-        userCell.lastNameLabel.text = user.LastName
+        userCell.lastNameLabel.text = user.lastName
         userCell.profileImageLabel.downloaded(from: user.profileImg ?? "" )
         return userCell
     }

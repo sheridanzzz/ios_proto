@@ -430,7 +430,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     func addUser(firstName: String, LastName: String, gender: String, dateOfBirth: String, state: String, postcode: Int, registerationDate: String, profileImg: String, uuid: String) -> Users {
         let user = Users()
         user.firstName = firstName
-        user.LastName = LastName
+        user.lastName = LastName
         user.gender = gender
         user.dateOfBirth = dateOfBirth
         //user.address = address

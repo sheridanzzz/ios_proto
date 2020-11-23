@@ -11,7 +11,7 @@ class Users: Codable, Equatable {
    
     var id: String?
     var firstName: String? = ""
-    var LastName: String? = ""
+    var lastName: String? = ""
     var gender: String? = ""
     var dateOfBirth: String? = ""
     //var address: String? = ""
@@ -25,7 +25,7 @@ class Users: Codable, Equatable {
     enum CodingKeys: String, CodingKey {
         case id
         case firstName
-        case LastName
+        case lastName
         case gender
         case dateOfBirth
         //case address

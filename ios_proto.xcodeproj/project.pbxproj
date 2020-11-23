@@ -21,6 +21,7 @@
 		500F069D2564124D0029033E /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F069C2564124D0029033E /* Events.swift */; };
 		500F06A1256413D90029033E /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F06A0256413D90029033E /* Sports.swift */; };
 		50281E252551C00D006BE114 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50281E242551C00D006BE114 /* MapViewController.swift */; };
+		5029732F256B948C00FAC314 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5029732E256B948B00FAC314 /* UserDetailsViewController.swift */; };
 		503DD51B256A6A57002CD9D6 /* AddSportEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503DD51A256A6A56002CD9D6 /* AddSportEventDelegate.swift */; };
 		503DD51F256A86E6002CD9D6 /* EventsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503DD51E256A86E5002CD9D6 /* EventsDetailsViewController.swift */; };
 		50412085256AAE9F00B92667 /* SearchUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50412084256AAE9F00B92667 /* SearchUsersTableViewController.swift */; };
@@ -62,6 +63,7 @@
 		500F069C2564124D0029033E /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		500F06A0256413D90029033E /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
 		50281E242551C00D006BE114 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		5029732E256B948B00FAC314 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		503DD51A256A6A56002CD9D6 /* AddSportEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSportEventDelegate.swift; sourceTree = "<group>"; };
 		503DD51E256A86E5002CD9D6 /* EventsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDetailsViewController.swift; sourceTree = "<group>"; };
 		50412084256AAE9F00B92667 /* SearchUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersTableViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				503DD51E256A86E5002CD9D6 /* EventsDetailsViewController.swift */,
 				50412084256AAE9F00B92667 /* SearchUsersTableViewController.swift */,
 				504120A6256AAECA00B92667 /* SearchUserTableViewCell.swift */,
+				5029732E256B948B00FAC314 /* UserDetailsViewController.swift */,
 			);
 			path = ios_proto;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				50E6ADD22553D5AC00DD6C5D /* LoginViewController.swift in Sources */,
 				50C25A1C253AF8AB00A03316 /* ViewController.swift in Sources */,
 				50E6ADDB2553D81100DD6C5D /* FacebookViewController.swift in Sources */,
+				5029732F256B948C00FAC314 /* UserDetailsViewController.swift in Sources */,
 				50C25A18253AF8AB00A03316 /* AppDelegate.swift in Sources */,
 				3E00F512256A7818003A52E7 /* EventDayViewController.swift in Sources */,
 				3E0537F625697AC300044B76 /* ChannelsTableViewController.swift in Sources */,
