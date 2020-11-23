@@ -701,18 +701,18 @@
             <objects>
                 <viewController id="vTa-aC-eKz" customClass="KolodaViewController" customModule="ios_proto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="isw-bP-NHH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Au8-XF-AK3" userLabel="KolodaView" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="100" y="100" width="175" height="200"/>
+                                <rect key="frame" x="100" y="100" width="162" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="nS6-Cn-k9T"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNA-CG-uz7">
-                                <rect key="frame" x="228" y="348" width="99" height="90"/>
+                                <rect key="frame" x="228" y="348" width="86" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="ITh-UG-Bwk"/>
                                     <constraint firstAttribute="width" constant="90" id="m8o-Aw-XJM"/>
@@ -977,6 +977,9 @@
                                 <state key="normal" title="Set Sport Preferences">
                                     <color key="titleColor" systemColor="systemIndigoColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="vTa-aC-eKz" kind="show" id="tyg-Tq-uh7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ctX-cj-lOS"/>
