@@ -26,7 +26,7 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
         Auth.auth().addStateDidChangeListener { (auth, user) in
             // ...
-            self.uuid_textField.text = auth.currentUser?.uid
+            self.uuid_textField.text = auth.currentUser?.email
             self.currentUserId = auth.currentUser?.uid
         }
         
